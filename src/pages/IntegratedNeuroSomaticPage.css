@@ -1,0 +1,166 @@
+/* Integrated Neuro-Somatic Session Page */
+
+.integrated-hero {
+  position: relative;
+  padding: 8.5rem 0 6rem;
+  background: linear-gradient(135deg, #fefaf7 0%, #f8f9ff 30%, #f6fbff 70%, #fef9f5 100%);
+  overflow: hidden;
+}
+
+.integrated-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 15% 25%, rgba(255, 255, 255, 0.98) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 75%, rgba(235, 245, 255, 0.9) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 250, 245, 0.8) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.integrated-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(37, 99, 235, 0.15) 20%,
+    rgba(37, 99, 235, 0.25) 50%,
+    rgba(37, 99, 235, 0.15) 80%,
+    transparent 100%
+  );
+}
+
+.integrated-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.integrated-hero-title {
+  font-size: 3.5rem;
+  font-weight: 350;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.integrated-hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: #475569;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+.integrated-hero-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.integrated-primary-cta {
+  display: inline-block;
+  padding: 1.05rem 2.8rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+  color: #ffffff;
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.32);
+}
+
+.integrated-section {
+  padding: 5.5rem 0;
+  background: #ffffff;
+  border-top: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+.integrated-section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.integrated-section-title {
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: #0f172a;
+  margin-bottom: 1.75rem;
+  letter-spacing: -0.03em;
+}
+
+.integrated-body-text {
+  font-size: 1.12rem;
+  line-height: 1.9;
+  color: #475569;
+  margin-bottom: 1.35rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+.integrated-body-text:last-of-type {
+  margin-bottom: 0;
+}
+
+.integrated-bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.integrated-bullet-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 1.05rem;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.integrated-bullet-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2563eb;
+}
+
+.integrated-format-section {
+  background: linear-gradient(to bottom, #ffffff 0%, #f9fbff 60%, #fdf8f3 100%);
+}
+
+.integrated-format-cta {
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .integrated-hero {
+    padding: 6.5rem 0 4.5rem;
+  }
+
+  .integrated-hero-title {
+    font-size: 2.4rem;
+  }
+
+  .integrated-section {
+    padding: 4rem 0;
+  }
+
+  .integrated-section-title {
+    font-size: 1.9rem;
+  }
+}
+
