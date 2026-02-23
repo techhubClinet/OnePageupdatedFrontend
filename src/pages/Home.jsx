@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import HeaderNav from '../components/HeaderNav';
 import Footer from '../components/Footer';
 import TypingAnimation from '../components/TypingAnimation';
