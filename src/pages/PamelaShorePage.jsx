@@ -53,7 +53,7 @@ const PamelaShorePage = () => {
           <div className="pamela-bio-content">
             <div className="pamela-bio-image-wrapper">
               <img
-                src="/Founder.jpeg"
+                src="/stire.jpeg"
                 alt="Pamela Shore, Founder of Spiritual Dealer"
                 className="pamela-bio-image"
               />

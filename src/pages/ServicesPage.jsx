@@ -20,7 +20,7 @@ const ServicesPage = () => {
         </>
       ),
       format: 'In person',
-      image: '/1.png',
+      image: '/3.png',
       imageAlt: 'Gyrotonic® studio session with instructor guiding movement',
     },
     {
@@ -37,7 +37,7 @@ const ServicesPage = () => {
         </>
       ),
       format: 'In person',
-      image: '/3.png',
+      image: '/1.png',
       imageAlt: 'Pilates reformer session with instructor',
     },
     {
@@ -54,7 +54,7 @@ const ServicesPage = () => {
         </>
       ),
       format: 'Live / In person only',
-      image: '/5.png',
+      image: '/somatic%20movment%20therapy.jpeg',
       imageAlt: 'Integrated neuro-somatic and movement session',
     },
     {
@@ -225,7 +225,10 @@ const ServicesPage = () => {
           </div>
 
           {/* Craniosacral Therapy */}
-          <div className="services-modality-item" id="craniosacral">
+          <div className="services-modality-item services-modality-item-image-on-top" id="craniosacral">
+            <div className="services-modality-image-wrapper">
+              <img src="/craniesacral.jpeg" alt="Craniosacral therapy session" className="services-modality-image" />
+            </div>
             <h3 className="services-modality-name">Craniosacral Therapy (Upledger®)</h3>
             <p className="services-modality-description">
               Craniosacral Therapy (Upledger®) is referenced as part of the cranial therapy used in the

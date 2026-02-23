@@ -62,7 +62,7 @@ const BookPage = () => {
           <div className="book-about-content">
             <div className="book-about-image-wrapper">
               <img
-                src="/Founder.jpeg"
+                src="/stire.jpeg"
                 alt="Pamela Shore"
                 className="book-about-image"
               />
@@ -95,7 +95,7 @@ const BookPage = () => {
             <h2 className="book-section-title">About the Book</h2>
             <div className="book-cover-wrapper">
               <img
-                src="/Rbook.png"
+                src="/The%20book.png"
                 alt="Spiritual Dealer book cover by Pamela Shore"
                 className="book-cover-image"
               />

@@ -20,14 +20,6 @@ const Home = () => {
               Healing, transformation, and community through alternative and metaphysical practices.
               Explore multiple paths to healing and discover what resonates with your unique journey.
             </p>
-            <div className="home-hero-actions">
-              <Link to="/services" className="home-hero-btn primary">
-                View Services
-              </Link>
-              <Link to="/connect" className="home-hero-btn secondary">
-                Connect
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -77,7 +69,7 @@ const Home = () => {
           <div className="home-pamela-content">
             <div className="home-pamela-image-wrapper">
               <img
-                src="/pamelawithbook.png"
+                src="/stire.jpeg"
                 alt="Pamela Shore with book, Founder of Spiritual Dealer"
                 className="home-pamela-image"
               />
@@ -140,7 +132,7 @@ const Home = () => {
           <div className="home-book-content">
             <div className="home-book-cover-wrapper">
               <img
-                src="/Rbook.png"
+                src="/The%20book.png"
                 alt="Spiritual Dealer book cover by Pamela Shore"
                 className="home-book-cover"
               />
@@ -374,7 +366,10 @@ const Home = () => {
           </div>
 
           {/* Kinesiology */}
-          <div className="home-modality-detail">
+          <div className="home-modality-detail home-modality-detail-image-on-top">
+            <div className="home-modality-image-wrapper">
+              <img src="/kiniseiology.jpeg" alt="Kinesiology session" className="home-modality-image" />
+            </div>
             <h3 className="home-modality-name">Kinesiology</h3>
             <p className="home-modality-description">
               Kinesiology is integrated within InnerDialogue work as a tool for accessing information from the body&apos;s intelligence. Through muscle testing and specific protocols, kinesiology supports communication with the subconscious and helps identify patterns, blocks, and pathways for integration.

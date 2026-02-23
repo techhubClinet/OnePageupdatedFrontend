@@ -45,7 +45,7 @@ const BookLaunchSection = () => {
           <div className="book-cover-wrapper">
             <div className="book-cover-container">
               <img
-                src="/Picture.png"
+                src="/The%20book.png"
                 alt="Spiritual Dealer book cover by Pamela Shore"
                 className="book-image"
               />

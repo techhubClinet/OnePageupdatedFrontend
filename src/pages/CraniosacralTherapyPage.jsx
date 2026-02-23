@@ -30,13 +30,18 @@ const CraniosacralTherapyPage = () => {
 
       {/* What It Is */}
       <section className="modality-section">
-        <div className="container modality-section-inner">
-          <h2 className="modality-section-title">What It Is</h2>
-          <p className="modality-body-text">
-            Craniosacral Therapy (Upledger®) is referenced as part of the cranial therapy used in the
-            integration phase of InnerDialogue-informed work. It is included where appropriate within
-            neuro-somatic and movement sessions.
-          </p>
+        <div className="container modality-section-inner modality-section-with-image">
+          <div className="modality-section-image-wrapper">
+            <img src="/craniesacral.jpeg" alt="Craniosacral therapy session" className="modality-section-image" />
+          </div>
+          <div className="modality-section-text">
+            <h2 className="modality-section-title">What It Is</h2>
+            <p className="modality-body-text">
+              Craniosacral Therapy (Upledger®) is referenced as part of the cranial therapy used in the
+              integration phase of InnerDialogue-informed work. It is included where appropriate within
+              neuro-somatic and movement sessions.
+            </p>
+          </div>
         </div>
       </section>
 

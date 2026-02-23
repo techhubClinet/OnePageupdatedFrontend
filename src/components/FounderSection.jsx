@@ -9,7 +9,7 @@ const FounderSection = () => {
           <div className="founder-image-wrapper">
             <div className="founder-image-container">
               <img
-                src="/Founder.jpeg"
+                src="/stire.jpeg"
                 alt="Pamela Shore, Founder of Spiritual Dealer"
                 className="founder-image"
               />

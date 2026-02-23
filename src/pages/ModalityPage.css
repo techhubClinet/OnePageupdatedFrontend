@@ -96,6 +96,45 @@
   padding: 0 2rem;
 }
 
+.modality-section-with-image {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+.modality-section-image-wrapper {
+  flex-shrink: 0;
+  width: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.08);
+}
+
+.modality-section-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.modality-section-text {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .modality-section-with-image {
+    flex-direction: column;
+  }
+  .modality-section-image-wrapper {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
+
 .modality-section-title {
   font-size: 2.1rem;
   font-weight: 400;
