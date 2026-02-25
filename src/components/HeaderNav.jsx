@@ -250,7 +250,7 @@ const HeaderNav = () => {
             <button
               type="button"
               className={`nav-dropdown-trigger ${
-                location.pathname === '/connect' ? 'active' : ''
+                location.pathname === '/connect' || location.pathname === '/community' ? 'active' : ''
               }`}
               aria-haspopup="true"
               aria-expanded={openDropdown === 'community'}
@@ -262,6 +262,13 @@ const HeaderNav = () => {
               <span className="nav-dropdown-caret" aria-hidden="true" />
             </button>
             <div className="nav-dropdown-menu">
+              <Link
+                to="/community"
+                className="nav-dropdown-link"
+                onClick={() => setOpenDropdown(null)}
+              >
+                Community (Coming Soon)
+              </Link>
               <a
                 href="/connect#community"
                 className="nav-dropdown-link"

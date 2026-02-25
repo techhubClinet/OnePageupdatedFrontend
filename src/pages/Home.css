@@ -1090,3 +1090,177 @@
     font-size: 1.625rem;
   }
 }
+
+/* Three-section homepage: Book, Pamela Shore, Community */
+.home-section-one .home-book-content {
+  display: grid;
+  grid-template-columns: 0.38fr 0.62fr;
+  gap: 4rem;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.home-book-audio-note {
+  font-size: 1.05rem;
+  color: #64748b;
+  font-style: italic;
+  margin: 1.5rem 0 2rem;
+}
+
+.home-cta-btn {
+  display: inline-block;
+  padding: 1rem 2.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  letter-spacing: -0.01em;
+}
+
+.home-cta-primary {
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #3b82f6 100%);
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.28);
+}
+
+.home-cta-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.35);
+}
+
+.home-cta-secondary {
+  background: #fff;
+  color: #1e40af;
+  border: 2px solid rgba(37, 99, 235, 0.35);
+}
+
+.home-cta-secondary:hover {
+  border-color: #2563eb;
+  background: #f8faff;
+  color: #1d4ed8;
+}
+
+.home-subsection-title {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.home-how-to-work {
+  max-width: 900px;
+  margin: 4rem auto 3rem;
+  padding: 0 2rem;
+}
+
+.home-how-to-work-intro {
+  font-size: 1.1rem;
+  color: #475569;
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+}
+
+.home-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.home-modalities-list-block {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+}
+
+.home-modalities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 2rem;
+}
+
+.home-modality-list-item {
+  font-size: 1.1rem;
+  color: #334155;
+  font-weight: 400;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.home-modality-list-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.home-booking-block {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.home-booking-intro {
+  font-size: 1.05rem;
+  color: #475569;
+  margin-bottom: 1.25rem;
+  line-height: 1.7;
+}
+
+.home-booking-cta-wrap {
+  margin-bottom: 2.5rem;
+}
+
+.home-community-image-wrap {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.home-community-hero-image {
+  max-width: 100%;
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(148, 163, 184, 0.1);
+}
+
+.home-community-coming-soon-badge {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-top: 1.5rem !important;
+}
+
+@media (max-width: 968px) {
+  .home-section-one .home-book-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .home-section-one .home-book-cover-wrapper {
+    order: -1;
+    margin-bottom: 1.5rem;
+  }
+
+  .home-modalities-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-community-hero-image {
+    max-height: 280px;
+  }
+}

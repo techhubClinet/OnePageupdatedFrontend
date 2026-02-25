@@ -75,6 +75,11 @@ const ConnectPage = () => {
         <div className="container">
           <div className="connect-community-content">
             <h2 className="connect-section-title">Join the Community</h2>
+            <img
+              src={`${process.env.PUBLIC_URL || ''}/Community.png`}
+              alt="Spiritual Dealer Community"
+              className="connect-community-image"
+            />
             <div className="connect-community-text">
               <p>
                 Spiritual Dealer is more than individual sessions — it&apos;s a community of practitioners,

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './pages/Home';
 import ServicesPage from './pages/ServicesPage';
 import ConnectPage from './pages/ConnectPage';
+import CommunityComingSoonPage from './pages/CommunityComingSoonPage';
 import AdminLogin from './admin/AdminLogin';
 import AdminDashboard from './admin/AdminDashboard';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/connect" element={<ConnectPage />} />
+        <Route path="/community" element={<CommunityComingSoonPage />} />
         
         {/* Backward compatibility - redirect booking to connect */}
         <Route path="/booking" element={<Navigate to="/connect" replace />} />

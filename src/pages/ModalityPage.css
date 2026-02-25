@@ -43,6 +43,16 @@
   padding: 0 2rem;
 }
 
+.community-hero-image {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  margin: 0 auto 2rem;
+  border-radius: 12px;
+}
+
 .modality-hero-title {
   font-size: 3.25rem;
   font-weight: 350;

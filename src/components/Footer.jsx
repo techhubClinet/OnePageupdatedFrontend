@@ -1,64 +1,66 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './Footer.css';
 
 const Footer = () => {
   const location = useLocation();
 
-  const handleScroll = (e, targetId) => {
-    e.preventDefault();
+  const scrollToSection = (targetId) => {
     if (location.pathname !== '/') {
       window.location.href = `/#${targetId}`;
       return;
     }
     const el = document.getElementById(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSectionClick = (e, targetId) => {
+    e.preventDefault();
+    scrollToSection(targetId);
   };
 
   return (
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-brand">
-          <img src="/Rlogo.png" alt="Spiritual Dealer Logo" className="footer-logo-image" />
+          <img src={`${process.env.PUBLIC_URL || ''}/Rlogo.png`} alt="Spiritual Dealer Logo" className="footer-logo-image" />
           <p className="footer-brand-text">Spiritual Dealer</p>
         </div>
         <div className="footer-divider" />
         <nav className="footer-nav">
           <a
-            href={location.pathname !== '/' ? '/#top' : '#top'}
-            onClick={(e) => location.pathname === '/' && handleScroll(e, 'top')}
+            href="/#book"
+            className="footer-nav-link"
+            onClick={(e) => handleSectionClick(e, 'book')}
+          >
+            The Book
+          </a>
+          <a
+            href="/#pamela"
+            className="footer-nav-link"
+            onClick={(e) => handleSectionClick(e, 'pamela')}
+          >
+            Pamela Shore
+          </a>
+          <a
+            href="/#community"
+            className="footer-nav-link footer-coming-soon"
+            title="The Community – Coming Soon"
+            aria-label="The Community"
+            onClick={(e) => handleSectionClick(e, 'community')}
+          >
+            The Community
+          </a>
+          <a
+            href="/admin"
             className="footer-nav-link"
           >
-            Home
-          </a>
-          <Link to="/pamelashore" className="footer-nav-link">
-            Pamela Shore
-          </Link>
-          <Link to="/book" className="footer-nav-link">
-            The Book
-          </Link>
-          <Link to="/services" className="footer-nav-link">
-            Modalities
-          </Link>
-          <button
-            type="button"
-            className="footer-nav-link footer-coming-soon"
-            onClick={(e) => e.preventDefault()}
-            title="Coming Soon"
-            aria-label="Community (Coming Soon)"
-          >
-            Community
-          </button>
-          <Link to="/admin" className="footer-nav-link">
             Admin
-          </Link>
+          </a>
         </nav>
       </div>
     </footer>
   );
 };
 
-export default Footer;
-
+export default Footer;;
