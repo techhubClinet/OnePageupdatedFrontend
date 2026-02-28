@@ -224,32 +224,7 @@ const ServicesPage = () => {
             <p className="services-modality-format"><strong>Format:</strong> Live or Zoom.</p>
           </div>
 
-          {/* Craniosacral Therapy */}
-          <div className="services-modality-item services-modality-item-image-on-top" id="craniosacral">
-            <div className="services-modality-image-wrapper">
-              <img src="/craniesacral.jpeg" alt="Craniosacral therapy session" className="services-modality-image" />
-            </div>
-            <h3 className="services-modality-name">Craniosacral Therapy (Upledger®)</h3>
-            <p className="services-modality-description">
-              Craniosacral Therapy (Upledger®) is referenced as part of the cranial therapy used in the
-              integration phase of InnerDialogue-informed work. It is included where appropriate within
-              neuro-somatic and movement sessions.
-            </p>
-            <p className="services-modality-format"><strong>Format:</strong> In-person only, incorporated as part of InnerDialogue and neuro-somatic integration work.</p>
-          </div>
-
-          {/* Cranial Fluid Dynamics */}
-          <div className="services-modality-item" id="cranial-fluid-dynamics">
-            <h3 className="services-modality-name">Cranial Fluid Dynamics</h3>
-            <p className="services-modality-description">
-              Cranial Fluid Dynamics uses the cranial fluid as a listening medium for how the nervous
-              system is organized. The work attends to subtle changes in the fluid system as patterns
-              of holding and organization become apparent. Through this listening, the system is given
-              space to reorganize without force. The work respects the body&apos;s own timing and capacity
-              for change.
-            </p>
-            <p className="services-modality-format"><strong>Format:</strong> In person.</p>
-          </div>
+          {/* Craniosacral and Cranial Fluid Dynamics — Phase 2 */}
         </div>
       </section>
 

@@ -2,8 +2,6 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
-import ServicesPage from './pages/ServicesPage';
-import ConnectPage from './pages/ConnectPage';
 import AdminLogin from './admin/AdminLogin';
 import AdminDashboard from './admin/AdminDashboard';
 
@@ -13,13 +11,11 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* Main Pages */}
+        {/* Main page only — 3 sections: Book, Pamela Shore, Community */}
         <Route path="/" element={<Home />} />
-        <Route path="/services" element={<ServicesPage />} />
-        <Route path="/connect" element={<ConnectPage />} />
-        
-        {/* Backward compatibility - redirect booking to connect */}
-        <Route path="/booking" element={<Navigate to="/connect" replace />} />
+        <Route path="/services" element={<Navigate to="/" state={{ scrollTo: 'pamela' }} replace />} />
+        <Route path="/connect" element={<Navigate to="/" state={{ scrollTo: 'community' }} replace />} />
+        <Route path="/booking" element={<Navigate to="/" state={{ scrollTo: 'booking' }} replace />} />
         
         {/* Admin Routes */}
         <Route

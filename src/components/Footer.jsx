@@ -33,24 +33,27 @@ const Footer = () => {
           >
             Home
           </a>
-          <Link to="/pamelashore" className="footer-nav-link">
+          <a
+            href={location.pathname !== '/' ? '/#book' : '#book'}
+            onClick={(e) => handleScroll(e, 'book')}
+            className="footer-nav-link"
+          >
+            Book
+          </a>
+          <a
+            href={location.pathname !== '/' ? '/#pamela' : '#pamela'}
+            onClick={(e) => handleScroll(e, 'pamela')}
+            className="footer-nav-link"
+          >
             Pamela Shore
-          </Link>
-          <Link to="/book" className="footer-nav-link">
-            The Book
-          </Link>
-          <Link to="/services" className="footer-nav-link">
-            Modalities
-          </Link>
-          <button
-            type="button"
-            className="footer-nav-link footer-coming-soon"
-            onClick={(e) => e.preventDefault()}
-            title="Coming Soon"
-            aria-label="Community (Coming Soon)"
+          </a>
+          <a
+            href={location.pathname !== '/' ? '/#community' : '#community'}
+            onClick={(e) => handleScroll(e, 'community')}
+            className="footer-nav-link"
           >
             Community
-          </button>
+          </a>
           <Link to="/admin" className="footer-nav-link">
             Admin
           </Link>
@@ -61,4 +64,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

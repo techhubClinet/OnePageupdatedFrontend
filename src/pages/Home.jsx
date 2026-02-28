@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import HeaderNav from '../components/HeaderNav';
 import Footer from '../components/Footer';
-import TypingAnimation from '../components/TypingAnimation';
+import BookingSection from '../components/BookingSection';
 import './Home.css';
 
+// Phase 1: Content only. Replace with the Amazon link Pamela provided when she sends it.
+const AMAZON_BOOK_URL = 'https://www.amazon.com/dp/PLACEHOLDER';
+
 const Home = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const scrollToId = location.state?.scrollTo || (location.hash ? location.hash.slice(1) : null);
+    if (scrollToId && typeof window !== 'undefined') {
+      const el = document.getElementById(scrollToId);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 100);
+      }
+    }
+  }, [location.state?.scrollTo, location.hash]);
+
   return (
     <div className="App" id="top">
       <HeaderNav />
-      
+
       {/* Hero Section */}
       <section className="home-hero">
         <div className="home-hero-gradient" />
@@ -17,114 +35,14 @@ const Home = () => {
             <h1 className="home-hero-title">Welcome to Spiritual Dealer</h1>
             <p className="home-hero-description">
               Healing, transformation, and community through alternative and metaphysical practices.
-              Explore multiple paths to healing and discover what resonates with your unique journey.
             </p>
           </div>
         </div>
       </section>
 
-      {/* What is Spiritual Dealer Section */}
-      <section className="home-what-is" id="about">
-        <div className="container">
-          <div className="home-what-is-content">
-            <h2 className="home-section-title">What is Spiritual Dealer?</h2>
-            <div className="home-what-is-text">
-              <p>
-                Spiritual Dealer is a curated healing community created to support transformation on physical, emotional, and spiritual levels.
-              </p>
-              <p>
-                Born from lived healing experience, Spiritual Dealer brings together trusted practitioners and diverse modalities—offering pathways beyond conventional approaches and honoring that no two healing journeys are the same.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* It Takes a Village Section */}
-      <section className="home-village">
-        <div className="home-village-gradient" />
-        <div className="container">
-          <div className="home-village-content">
-            <h2 className="home-section-title">It Takes a Village</h2>
-            <div className="home-village-text">
-              <p>
-                Healing is not one-size-fits-all.
-              </p>
-              <p>
-                Some paths move through the body.
-                Others move through the nervous system, energy, memory, or intuition.
-              </p>
-              <p>
-                Spiritual Dealer exists to hold space for many approaches—so you can find what truly supports your healing, growth, and self-discovery.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pamela Shore Bio Section */}
-      <section className="home-pamela-bio" id="pamela">
-        <div className="container">
-          <div className="home-pamela-content">
-            <div className="home-pamela-image-wrapper">
-              <img
-                src="/stire.jpeg"
-                alt="Pamela Shore with book, Founder of Spiritual Dealer"
-                className="home-pamela-image"
-              />
-            </div>
-            <div className="home-pamela-text">
-              <h2 className="home-section-title">About Pamela Shore</h2>
-              <div className="home-pamela-bio-blocks">
-                <p>
-                  After years of searching for answers through countless healing modalities, I created the space I wish I had found during my own healing journey — one that honors the body&apos;s intelligence, the nervous system, and the deeper patterns shaping our lives.
-                </p>
-                <p>
-                  My work is rooted in embodied, nervous-system-based processes that support regulation, clarity, and lasting change. Healing is not linear, and awareness alone is not enough — the body must be included for true integration to occur.
-                </p>
-                <p>
-                  This work led me to create Spiritual Dealer, a space where these modalities can be explored together.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Credentials Section */}
-      <section className="home-credentials">
-        <div className="container">
-          <h2 className="home-section-title">Credentials & Training</h2>
-          <div className="home-credentials-grid">
-            <div className="home-credential-item">
-              <h3 className="home-credential-title">Neuro-Somatic Movement Practitioner</h3>
-              <p className="home-credential-desc">
-                Certified in nervous-system-based movement and somatic practices
-              </p>
-            </div>
-            <div className="home-credential-item">
-              <h3 className="home-credential-title">InnerDialogue™ Practitioner</h3>
-              <p className="home-credential-desc">
-                Trained in non-directive processes that reveal and integrate internal patterns
-              </p>
-            </div>
-            <div className="home-credential-item">
-              <h3 className="home-credential-title">GYROTONIC® & Pilates Instructor</h3>
-              <p className="home-credential-desc">
-                Certified in movement modalities that support spinal articulation and efficient movement
-              </p>
-            </div>
-            <div className="home-credential-item">
-              <h3 className="home-credential-title">BeingHuman Constellation Facilitator</h3>
-              <p className="home-credential-desc">
-                Trained in constellation work that addresses spiritual, energetic, and existential dimensions
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Book Section */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {/* 1. THE BOOK – Spiritual Dealer */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
       <section className="home-book-section" id="book">
         <div className="home-book-gradient" />
         <div className="container">
@@ -137,7 +55,9 @@ const Home = () => {
               />
             </div>
             <div className="home-book-text">
-              <h2 className="home-section-title">The Book</h2>
+              <h2 className="home-section-title">The Book – Spiritual Dealer</h2>
+
+              {/* Book intro */}
               <p className="home-book-intro-large">
                 Many of us move through life with a quiet sense that something is &quot;off.&quot;
               </p>
@@ -162,239 +82,186 @@ const Home = () => {
                 This book is an honest exploration of surrender, self-inquiry, and the courage it takes to listen to the body,
                 the nervous system, and the wisdom beneath conscious awareness.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Audiobook Section */}
-      <section className="home-book-section" id="audiobook">
-        <div className="home-book-gradient" />
-        <div className="container">
-          <div className="home-book-content">
-            <div className="home-book-text">
-              <h2 className="home-section-title">Audiobook</h2>
-              <p className="home-book-intro-large">
-                A spoken journey through healing, embodiment, and lived experience.
-              </p>
+              <h3 className="home-book-subsection-title">What the Book Explores</h3>
               <p>
-                The Spiritual Dealer audiobook offers a deeply personal and embodied listening experience.
-                Narrated to preserve the tone and intention of the original work, it allows the story and
-                teachings to be received in a more intimate and reflective way.
+                The journey moves through uncertainty, resistance, grief, and eventually clarity. Along the way, I encountered
+                gifted healers, intuitive practitioners, and alternative approaches that helped me reconnect with myself in ways
+                traditional systems could not. There are no quick fixes here — only truth, presence, and the understanding that
+                healing unfolds when we stop trying to force it and begin to listen. Step by step, this journey revealed something
+                essential: We are not broken — we are remembering.
               </p>
-              <p>
-                This is not a performance — it is a transmission of lived experience.
-              </p>
-              <p>
-                Through personal stories and exploration across multiple healing disciplines, the audiobook
-                guides listeners through themes of trauma, inherited patterns, nervous system regulation,
-                and the body&apos;s innate intelligence.
-              </p>
-              <h3 className="home-book-subsection-title">What You&apos;ll Hear</h3>
-              <ul className="home-book-list">
-                <li>The role of early life experiences and lineage</li>
-                <li>How patterns become embedded in the nervous system</li>
-                <li>The limits of one-size-fits-all healing approaches</li>
-                <li>Conversations and insights from diverse healing modalities</li>
-                <li>The process of embodied integration</li>
-              </ul>
-              <p className="home-book-empowerment">
-                Spiritual Dealer invites discernment, curiosity, and self-trust. It is an offering for
-                those ready to listen — not only to a voice, but to their own inner awareness.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Press / Media Section */}
-      <section className="home-book-section" id="press-media">
-        <div className="home-book-gradient" />
-        <div className="container">
-          <div className="home-book-content">
-            <div className="home-book-text">
-              <h2 className="home-section-title">Press &amp; Media</h2>
-              <p className="home-book-intro-large">
-                Interviews, features, and conversations exploring embodied healing.
-              </p>
-              <p>
-                Pamela Shore&apos;s work bridges neuro-somatic awareness, movement, and metaphysical healing.
-                Through interviews, written features, and collaborative discussions, she speaks about the
-                integration of body-based processes, inherited patterns, and conscious awareness.
-              </p>
-              <p>
-                Her approach emphasizes grounded, nervous-system-based transformation rather than ideology
-                or prediction.
-              </p>
-              <h3 className="home-book-subsection-title">Topics of Conversation</h3>
-              <ul className="home-book-list">
-                <li>Neuro-somatic movement and embodiment</li>
-                <li>The foundations of InnerDialogue™</li>
-                <li>BeingHuman Constellation Work™</li>
-                <li>Trauma and inherited family patterns</li>
-                <li>Epigenetics and embodied awareness</li>
-                <li>The philosophy behind Spiritual Dealer</li>
-              </ul>
-              <p>
-                <em>Spiritual Dealer</em> has been discussed in conversations surrounding alternative
-                healing, lineage, nervous system integration, and the evolution of personal transformation
-                work. The book offers insight into diverse healing systems without elevating one above another,
-                emphasizing discernment and lived experience.
-              </p>
-              <p>
-                For press requests, interviews, speaking engagements, or collaboration inquiries,
-                please use the contact form on the Connect page.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Journey */}
-      <section className="home-journey">
-        <div className="container">
-          <h2 className="home-section-title">The Journey</h2>
-          <p className="home-journey-intro">
-            Healing is not a straight line.
-          </p>
-          <div className="home-journey-text">
-            <p>
-              The journey moves through uncertainty, resistance, grief, and eventually clarity. Along the way, I encountered
-              gifted healers, intuitive practitioners, and alternative approaches that helped me reconnect with myself in ways
-              traditional systems could not.
-            </p>
-            <p>
-              There are no quick fixes here — only truth, presence, and the understanding that healing unfolds when we stop
-              trying to force it and begin to listen.
-            </p>
-            <p>
-              Step by step, this journey revealed something essential: We are not broken — we are remembering.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* From Book to Community */}
-      <section className="home-book-community">
-        <div className="home-book-gradient" />
-        <div className="container">
-          <div className="home-book-community-content">
-            <h2 className="home-section-title">From Book to Community</h2>
-            <div className="home-book-community-text">
+              <h3 className="home-book-subsection-title">An Invitation</h3>
               <p>
                 Through this journey, I had the privilege of working with exceptional intuitive healers — individuals who helped
-                me access my own healing and discover my unique gifts.
-              </p>
-              <p>
-                That experience became the foundation for Spiritual Dealer.
-              </p>
-              <p>
+                me access my own healing and discover my unique gifts. That experience became the foundation for Spiritual Dealer.
                 Spiritual Dealer was created as a community to support others on their healing journeys — bringing together many
-                of the gifted practitioners who offered guidance, insight, and healing along my own path.
+                of the gifted practitioners who offered guidance, insight, and healing along my own path. This book is the doorway.
+                The community is the continuation.
               </p>
-              <p className="home-book-community-cta">
-                This book is the doorway. The community is the continuation.
+
+              <p className="home-book-empowerment">
+                <a href={AMAZON_BOOK_URL} target="_blank" rel="noopener noreferrer" className="home-book-amazon-link">
+                  Get the book on Amazon
+                </a>
+              </p>
+              <p className="home-book-audiobook-note">
+                Audiobook coming later (not available yet).
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Modalities Section */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {/* 2. PAMELA SHORE */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      <section className="home-pamela-bio" id="pamela">
+        <div className="container">
+          <div className="home-pamela-content">
+            <div className="home-pamela-image-wrapper">
+              <img
+                src="/stire.jpeg"
+                alt="Pamela Shore, Founder of Spiritual Dealer"
+                className="home-pamela-image"
+              />
+            </div>
+            <div className="home-pamela-text">
+              <h2 className="home-section-title">Pamela Shore</h2>
+              <div className="home-pamela-bio-blocks">
+                <p>
+                  After years of searching for answers through countless healing modalities, I created the space I wish I had found during my own healing journey — one that honors the body&apos;s intelligence, the nervous system, and the deeper patterns shaping our lives.
+                </p>
+                <p>
+                  My work is rooted in embodied, nervous-system-based processes that support regulation, clarity, and lasting change. Healing is not linear, and awareness alone is not enough — the body must be included for true integration to occur.
+                </p>
+                <p>
+                  This work led me to create Spiritual Dealer, a space where these modalities can be explored together.
+                </p>
+                <p>
+                  I am certified in neuro-somatic movement and somatic practices, trained in InnerDialogue™ (non-directive processes that reveal and integrate internal patterns), and certified in GYROTONIC® and Pilates. I am also a BeingHuman Constellation facilitator, trained in constellation work that addresses spiritual, energetic, and existential dimensions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Modalities — Phase 1 only: Pilates, Gyrotonic, Integrated Somatic Work, InnerDialogue, BeingHuman Constellation, Constellation Card Reading */}
       <section className="home-modalities" id="modalities">
         <div className="home-modalities-gradient" />
         <div className="container">
           <h2 className="home-section-title">Modalities</h2>
-          
-          {/* Gyrotonic® */}
+
           <div className="home-modality-detail">
-            <h3 className="home-modality-name">GYROTONIC®</h3>
+            <h3 className="home-modality-name">Pilates</h3>
             <p className="home-modality-description">
-              GYROTONIC® is a movement system that emphasizes fluid, three-dimensional movement patterns. Unlike linear exercise approaches, GYROTONIC® works with the body&apos;s natural spiraling and circular movements, supporting spinal articulation, joint space, and overall mobility.
-            </p>
-            <p className="home-modality-description">
-              This practice has been essential in my understanding of how movement can support nervous system regulation and how physical patterns are connected to emotional and energetic patterns. The equipment-based sessions allow for precise, supportive movement that adapts to each person&apos;s unique needs and limitations and are suitable for all ages.
+              Pilates sessions emphasize alignment, breath, and precision to build strength while supporting balance and functional movement. Classical Pilates follows a structured order of exercises that organizes strength, alignment, and coordination through a conscious connection between mind, breath, and movement.
             </p>
           </div>
 
-          {/* Classical Pilates */}
-          <div className="home-modality-detail">
-            <h3 className="home-modality-name">Classical Pilates</h3>
-            <p className="home-modality-description">
-              Pilates sessions emphasize alignment, breath, and precision to build strength while supporting balance and functional movement.
-            </p>
-            <p className="home-modality-description">
-              Classical Pilates follows a structured order of exercises that organizes strength, alignment, and coordination through a conscious connection between mind, breath, and movement.
-            </p>
-          </div>
-
-          {/* InnerDialogue™ */}
-          <div className="home-modality-detail">
-            <h3 className="home-modality-name">InnerDialogue™</h3>
-            <p className="home-modality-description">
-              InnerDialogue is a non-directive process that works beneath conscious thought to reveal and integrate internal patterns influencing perception, behavior, and life direction. Unlike traditional therapy, InnerDialogue doesn&apos;t require you to relive past experiences or engage in analysis. Instead, it supports recognition and resolution at a deeper level, allowing understanding to emerge naturally.
-            </p>
-            <p className="home-modality-description">
-              This modality has been transformative in my own healing journey and continues to be a cornerstone of my practice. It offers a way to access and shift patterns that may have felt inaccessible through other approaches.
-            </p>
-            <p className="home-modality-description">
-              InnerDialogue is a neuro-somatic process informed by kinesiology and specific hand modes that support communication with the subconscious. The work moves toward an integration phase, allowing patterns that have been recognized to be met, organized, and included.
-            </p>
-          </div>
-
-          {/* BeingHuman Constellation Work */}
-          <div className="home-modality-detail">
-            <h3 className="home-modality-name">BeingHuman Constellation Work™</h3>
-            <p className="home-modality-description">
-              BeingHuman constellation work is an experiential process that reveals hidden system dynamics. The work orients you to the patterns you are living inside of rather than offering prediction.
-            </p>
-            <p className="home-modality-description">
-              This work explores deeper orders of connection beyond traditional Family Constellations, addressing spiritual, energetic, and existential dimensions.
-            </p>
-          </div>
-
-          {/* Cranial Fluid Dynamics */}
-          <div className="home-modality-detail">
-            <h3 className="home-modality-name">Cranial Fluid Dynamics</h3>
-            <p className="home-modality-description">
-              Cranial Fluid Dynamics uses the cranial fluid as a listening medium for how the nervous system is organized. The work attends to subtle changes in the fluid system as patterns of holding and organization become apparent.
-            </p>
-            <p className="home-modality-description">
-              Through this listening, the system is given space to reorganize without force. The work respects the body&apos;s own timing and capacity for change.
-            </p>
-          </div>
-
-          {/* Kinesiology */}
           <div className="home-modality-detail home-modality-detail-image-on-top">
             <div className="home-modality-image-wrapper">
-              <img src="/kiniseiology.jpeg" alt="Kinesiology session" className="home-modality-image" />
+              <img src="/3.png" alt="Gyrotonic session" className="home-modality-image" />
             </div>
-            <h3 className="home-modality-name">Kinesiology</h3>
+            <h3 className="home-modality-name">Gyrotonic</h3>
             <p className="home-modality-description">
-              Kinesiology is integrated within InnerDialogue work as a tool for accessing information from the body&apos;s intelligence. Through muscle testing and specific protocols, kinesiology supports communication with the subconscious and helps identify patterns, blocks, and pathways for integration.
+              GYROTONIC® is a movement system that emphasizes fluid, three-dimensional movement patterns. Unlike linear exercise approaches, GYROTONIC® works with the body&apos;s natural spiraling and circular movements, supporting spinal articulation, joint space, and overall mobility. The equipment-based sessions allow for precise, supportive movement that adapts to each person&apos;s unique needs and limitations and are suitable for all ages.
             </p>
+          </div>
+
+          <div className="home-modality-detail home-modality-detail-image-on-top">
+            <div className="home-modality-image-wrapper">
+              <img src="/somatic%20movment%20therapy.jpeg" alt="Integrated Somatic Work session" className="home-modality-image" />
+            </div>
+            <h3 className="home-modality-name">Integrated Somatic Work</h3>
             <p className="home-modality-description">
-              This approach allows the body itself to guide the process, revealing what is ready to be addressed and what needs to be honored in its own timing.
+              This in-person session integrates neuro-somatic awareness, InnerDialogue-informed work, and movement through Gyrotonic® or Pilates. Internal patterns are first recognized, then physically integrated through precise, supportive movement. This approach allows change to be experienced and stabilized in real time.
+            </p>
+          </div>
+
+          <div className="home-modality-detail home-modality-detail-image-on-top">
+            <div className="home-modality-image-wrapper">
+              <img src="/Inner.png" alt="InnerDialogue session" className="home-modality-image" />
+            </div>
+            <h3 className="home-modality-name">InnerDialogue</h3>
+            <p className="home-modality-description">
+              InnerDialogue is a non-directive process that works beneath conscious thought to reveal and integrate internal patterns influencing perception, behavior, and life direction. It is a neuro-somatic process informed by kinesiology and specific hand modes that support communication with the subconscious. The work moves toward an integration phase, allowing patterns that have been recognized to be met, organized, and included.
+            </p>
+          </div>
+
+          <div className="home-modality-detail">
+            <h3 className="home-modality-name">BeingHuman Constellation</h3>
+            <p className="home-modality-description">
+              BeingHuman constellation work is an experiential process that reveals hidden system dynamics. The work orients you to the patterns you are living inside of rather than offering prediction. This work explores deeper orders of connection beyond traditional Family Constellations, addressing spiritual, energetic, and existential dimensions.
+            </p>
+          </div>
+
+          <div className="home-modality-detail">
+            <h3 className="home-modality-name">Constellation Card Reading</h3>
+            <p className="home-modality-description">
+              BeingHuman card readings use the BeingHuman cards as a way of entering the constellation field. The cards offer symbolic imagery that reflects how different aspects of your experience are organized in the present moment. This work orients you to patterns that are active now. It is not predictive or interpretive and does not offer advice.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Closing Reassurance */}
-      <section className="home-reassurance">
-        <div className="home-reassurance-gradient" />
+      {/* How To Work With Me — only 4 items */}
+      <section className="home-how-to-work" id="how-to-work">
         <div className="container">
-          <div className="home-reassurance-content">
-            <TypingAnimation
-              texts={[
-                'You are not broken.',
-                'You are not alone.',
-                'Your healing is possible.'
-              ]}
-              speed={80}
-              delay={800}
-              className="typing-animation-container"
-            />
+          <h2 className="home-section-title">How To Work With Me</h2>
+          <ul className="home-how-to-work-list">
+            <li>Book a private session</li>
+            <li>Integrated neuro-somatic movement session</li>
+            <li>Workshop / speaking engagement</li>
+            <li>Contact / reach out</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Booking — after describing services; includes session + calendar links and pictures */}
+      <section className="home-booking" id="booking">
+        <div className="container">
+          <p className="home-booking-intro">
+            Ready to begin? Choose a private session, integrated neuro-somatic movement session, or reach out for workshops and speaking engagements.
+          </p>
+          <div className="home-booking-images">
+            <img src="/1.png" alt="Pilates session" className="home-booking-thumb" />
+            <img src="/3.png" alt="Gyrotonic session" className="home-booking-thumb" />
+            <img src="/somatic%20movment%20therapy.jpeg" alt="Integrated somatic session" className="home-booking-thumb" />
+          </div>
+          <div className="home-booking-actions">
+            <a href="#booking" className="home-hero-btn primary" onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}>Book a Session</a>
+          </div>
+          <div className="home-booking-form-wrap">
+            <BookingSection />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      {/* 3. THE COMMUNITY – Spiritual Dealer */}
+      {/* ═══════════════════════════════════════════════════════════════ */}
+      <section className="home-community" id="community">
+        <div className="home-book-gradient" />
+        <div className="container">
+          <h2 className="home-section-title">The Community – Spiritual Dealer</h2>
+          <div className="home-community-content">
+            <div className="home-community-visual">
+              <img src="/Community.png" alt="Spiritual Dealer Community" className="home-community-image" />
+            </div>
+            <div className="home-community-text">
+              <p>
+                Spiritual Dealer is more than individual sessions — it&apos;s a community of practitioners, seekers, and those committed to healing and transformation.
+              </p>
+              <p>
+                Connect with others on similar paths, attend events and meetups, and discover practitioners who resonate with your journey. Born from lived healing experience, Spiritual Dealer brings together trusted practitioners and diverse modalities — offering pathways beyond conventional approaches and honoring that no two healing journeys are the same.
+              </p>
+              <p className="home-community-phase2">
+                Coming soon.
+              </p>
+            </div>
           </div>
         </div>
       </section>

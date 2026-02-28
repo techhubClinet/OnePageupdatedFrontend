@@ -45,6 +45,18 @@
   color: #1e3a8a;
 }
 
+.nav-link {
+  position: relative;
+  padding-bottom: 4px;
+  background: none;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .header-links a,
 .header-links button {
   position: relative;

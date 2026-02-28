@@ -95,153 +95,25 @@ const HeaderNav = () => {
           ref={navRef}
           className={`header-links ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`}
         >
-          {/* 1. Book / Author — Book Launch & Pamela Shore */}
-          <div
-            className={`nav-dropdown ${openDropdown === 'book-author' ? 'open' : ''}`}
-            onMouseEnter={() => handleDropdownMouseEnter('book-author')}
-            onMouseLeave={() => handleDropdownMouseLeave('book-author')}
+          {/* 1. Book — single link, no dropdown */}
+          <a
+            href="/#book"
+            className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
+            onClick={(e) => handleAnchorClick(e, 'book', '/')}
           >
-            <button
-              type="button"
-              className={`nav-dropdown-trigger ${location.pathname === '/' ? 'active' : ''}`}
-              aria-haspopup="true"
-              aria-expanded={openDropdown === 'book-author'}
-              onClick={() => {
-                if (isMobileViewport) toggleDropdown('book-author');
-              }}
-            >
-              Book / Author
-              <span className="nav-dropdown-caret" aria-hidden="true" />
-            </button>
-            <div className="nav-dropdown-menu">
-              <a
-                href="/#book"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'book', '/')}
-              >
-                The Book &amp; Book Launch
-              </a>
-              <a
-                href="/#audiobook"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'audiobook', '/')}
-              >
-                Audiobook
-              </a>
-              <a
-                href="/#pamela"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'pamela', '/')}
-              >
-                About Pamela Shore
-              </a>
-              <a
-                href="/#press-media"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'press-media', '/')}
-              >
-                Press / Media
-              </a>
-            </div>
-          </div>
+            Book
+          </a>
 
-          {/* 2. About Pamela — Modalities & How to Book */}
-          <div
-            className={`nav-dropdown ${openDropdown === 'about-pamela' ? 'open' : ''}`}
-            onMouseEnter={() => handleDropdownMouseEnter('about-pamela')}
-            onMouseLeave={() => handleDropdownMouseLeave('about-pamela')}
+          {/* 2. Pamela Shore — single link, no dropdown */}
+          <a
+            href="/#pamela"
+            className="nav-link"
+            onClick={(e) => handleAnchorClick(e, 'pamela', '/')}
           >
-            <button
-              type="button"
-              className={`nav-dropdown-trigger ${
-                location.pathname === '/services' ? 'active' : ''
-              }`}
-              aria-haspopup="true"
-              aria-expanded={openDropdown === 'about-pamela'}
-              onClick={() => {
-                if (isMobileViewport) toggleDropdown('about-pamela');
-              }}
-            >
-              About Pamela
-              <span className="nav-dropdown-caret" aria-hidden="true" />
-            </button>
-            <div className="nav-dropdown-menu">
-              <div className="nav-dropdown-section-label">Modalities</div>
-              <a
-                href="/services#integrated-neuro-somatic"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'integrated-neuro-somatic', '/services')}
-              >
-                Integrated Neuro-Somatic Session
-              </a>
-              <a
-                href="/services#gyrotonic-method"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'gyrotonic-method', '/services')}
-              >
-                Gyrotonic® Method
-              </a>
-              <a
-                href="/services#classical-pilates"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'classical-pilates', '/services')}
-              >
-                Classical Pilates
-              </a>
-              <a
-                href="/services#innerdialogue"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'innerdialogue', '/services')}
-              >
-                InnerDialogue™
-              </a>
-              <a
-                href="/services#beinghuman-constellation"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'beinghuman-constellation', '/services')}
-              >
-                BeingHuman Constellation Work
-              </a>
-              <a
-                href="/services#beinghuman-cards"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'beinghuman-cards', '/services')}
-              >
-                BeingHuman Card Readings
-              </a>
-              <a
-                href="/services#craniosacral"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'craniosacral', '/services')}
-              >
-                Craniosacral Therapy (Upledger®)
-              </a>
-              <a
-                href="/services#cranial-fluid-dynamics"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'cranial-fluid-dynamics', '/services')}
-              >
-                Cranial Fluid Dynamics
-              </a>
-              <div className="nav-dropdown-divider" />
-              <a
-                href="/services#rates-policies"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'rates-policies', '/services')}
-              >
-                Rates &amp; Policies
-              </a>
-              <a
-                href="/connect#booking"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'booking', '/connect')}
-              >
-                How to Book
-              </a>
-            </div>
-          </div>
+            Pamela Shore
+          </a>
 
-          {/* 3. Community — Practitioners, Events, Meetups */}
+          {/* 3. Community — dropdown only under Community */}
           <div
             className={`nav-dropdown ${openDropdown === 'community' ? 'open' : ''}`}
             onMouseEnter={() => handleDropdownMouseEnter('community')}
@@ -263,32 +135,11 @@ const HeaderNav = () => {
             </button>
             <div className="nav-dropdown-menu">
               <a
-                href="/connect#community"
+                href="/#community"
                 className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'community', '/connect')}
+                onClick={(e) => handleAnchorClick(e, 'community', '/')}
               >
                 Join the Community
-              </a>
-              <a
-                href="/connect#practitioners"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'practitioners', '/connect')}
-              >
-                Practitioners
-              </a>
-              <a
-                href="/connect#events"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'events', '/connect')}
-              >
-                Events / Meetups
-              </a>
-              <a
-                href="/connect#contact"
-                className="nav-dropdown-link"
-                onClick={(e) => handleAnchorClick(e, 'contact', '/connect')}
-              >
-                Contact
               </a>
             </div>
           </div>

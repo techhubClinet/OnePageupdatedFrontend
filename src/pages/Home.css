@@ -944,6 +944,185 @@
   font-weight: 500;
 }
 
+.home-book-amazon-link {
+  color: #1e40af;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.home-book-amazon-link:hover {
+  color: #2563eb;
+}
+
+.home-book-audiobook-note {
+  font-size: 1rem;
+  color: #64748b;
+  font-style: italic;
+  margin-top: 1rem;
+}
+
+/* How To Work With Me */
+.home-how-to-work {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, #ffffff 0%, #fefefe 100%);
+}
+
+.home-how-to-work-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.home-how-to-work-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: #475569;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.home-how-to-work-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* Booking block (after services) */
+.home-booking {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #f8faff 0%, #fefefe 50%, #fafbff 100%);
+}
+
+.home-booking-intro {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #475569;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.home-booking-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.home-booking-thumb {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.home-booking-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.home-booking-form-wrap {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Community section */
+.home-community {
+  position: relative;
+  padding: 9rem 0;
+  background: linear-gradient(135deg, #f4fbff 0%, #f2f3ff 50%, #fdf5f0 100%);
+  overflow: hidden;
+}
+
+.home-community-content {
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+}
+
+.home-community-visual {
+  position: relative;
+  z-index: 1;
+}
+
+.home-community-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+.home-community-text {
+  position: relative;
+  z-index: 1;
+}
+
+.home-community-text p {
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: #475569;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.home-community-phase2 {
+  font-size: 1rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+.home-community-mailing {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.home-community-mailing-desc {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.home-mailing-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.home-mailing-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+.home-mailing-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
   .home-explore-grid {
@@ -1013,8 +1192,24 @@
   .home-book-community,
   .home-modalities,
   .home-explore,
-  .home-reassurance {
+  .home-reassurance,
+  .home-how-to-work,
+  .home-booking,
+  .home-community {
     padding: 5rem 0;
+  }
+
+  .home-community-content {
+    grid-template-columns: 1fr;
+  }
+
+  .home-booking-thumb {
+    width: 140px;
+    height: 140px;
+  }
+
+  .home-mailing-form {
+    flex-direction: column;
   }
 
   .home-section-title {
