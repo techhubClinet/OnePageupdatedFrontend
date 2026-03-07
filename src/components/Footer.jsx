@@ -31,9 +31,11 @@ const Footer = () => {
           ))}
         </div>
         <nav className="footer-nav">
-          <a href="/#book" className="footer-nav-link">Book</a>
-          <a href="/#community" className="footer-nav-link">Community</a>
+          <a href="/#top" className="footer-nav-link">Home</a>
           <a href="/#pamela" className="footer-nav-link">Pamela Shore</a>
+          <a href="/#book" className="footer-nav-link">The Book</a>
+          <a href="/#modalities" className="footer-nav-link">Modalities</a>
+          <a href="/#community" className="footer-nav-link">Community</a>
           <Link to="/admin" className="footer-nav-link">Admin</Link>
         </nav>
       </div>

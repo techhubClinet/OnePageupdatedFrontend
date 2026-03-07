@@ -1,7 +1,6 @@
 import React from 'react';
 import HeaderNav from '../components/HeaderNav';
 import Footer from '../components/Footer';
-import BookingSection from '../components/BookingSection';
 import TypingAnimation from '../components/TypingAnimation';
 import { FaGlobe, FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { SiTiktok } from 'react-icons/si';
@@ -18,48 +17,85 @@ const communitySocialLinks = [
 
 const Home = () => {
   const [expandedModalities, setExpandedModalities] = React.useState({});
+  const [expandedBook, setExpandedBook] = React.useState(false);
   const toggleModality = (id) => {
     setExpandedModalities((prev) => ({ ...prev, [id]: !prev[id] }));
-  };
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
   return (
     <div className="App" id="top">
       <HeaderNav />
 
-      {/* ========== SECTION 1 — BOOK ========== */}
-      <section className="home-book-section" id="book">
-        <div className="home-book-gradient" />
+      {/* Hero Section */}
+      <section className="home-hero">
+        <div className="home-hero-gradient" />
         <div className="container">
-          <div className="home-book-content">
-            <div className="home-book-cover-wrapper">
-              <img src="/The%20book.png" alt="Spiritual Dealer book cover" className="home-book-cover" />
-            </div>
-            <div className="home-book-text">
-              <h2 className="home-section-title">Book</h2>
-              <h3 className="home-book-title">Spiritual Dealer</h3>
-              <p className="home-book-intro-large">A Memoir of Healing, Exploration, and Embodied Transformation</p>
+          <div className="home-hero-content">
+            <h1 className="home-hero-title">Spiritual Dealer</h1>
+            <p className="home-hero-description">
+              A Book. A Community. A Path to Understanding the Intelligence of the Body.
+            </p>
+            <div className="home-hero-prose">
               <p>
-                Spiritual Dealer is a memoir about searching for answers when traditional paths to healing were not enough.
-                Through personal experience and conversations with practitioners across many disciplines, Pamela Shore explores how trauma, inherited patterns, and life experiences shape the body — and how those patterns can be recognized, understood, and transformed.
+                Spiritual Dealer began as one woman&apos;s search for answers when traditional paths to healing were not enough.
               </p>
-              <a
-                href="https://a.co/d/08ugNFAj"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home-hero-btn primary home-book-order-btn"
-              >
-                Order the Book
-              </a>
+              <p>
+                Today it is evolving into a living platform — connecting embodied movement, neuro-somatic work, epigenetic insight, and healing disciplines that help people uncover the deeper patterns shaping their lives.
+              </p>
+              <p>
+                Founded by Pamela Shore, author, practitioner, and educator.
+              </p>
+            </div>
+            <a
+              href="#about"
+              className="home-hero-btn secondary"
+              onClick={(e) => { e.preventDefault(); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }}
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* What is Spiritual Dealer Section */}
+      <section className="home-what-is" id="about">
+        <div className="container">
+          <div className="home-what-is-content">
+            <h2 className="home-section-title">What is Spiritual Dealer?</h2>
+            <div className="home-what-is-text">
+              <p>
+                Spiritual Dealer is a curated healing community created to support transformation on physical, emotional, and spiritual levels.
+              </p>
+              <p>
+                Born from lived healing experience, Spiritual Dealer brings together trusted practitioners and diverse modalities—offering pathways beyond conventional approaches and honoring that no two healing journeys are the same.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ========== SECTION 2 — PAMELA SHORE ========== */}
-      {/* About Pamela */}
+      {/* It Takes a Village Section */}
+      <section className="home-village">
+        <div className="home-village-gradient" />
+        <div className="container">
+          <div className="home-village-content">
+            <h2 className="home-section-title">It Takes a Village</h2>
+            <div className="home-village-text">
+              <p>
+                Healing is not one-size-fits-all.
+              </p>
+              <p>
+                Some paths move through the body.
+                Others move through the nervous system, energy, memory, or intuition.
+              </p>
+              <p>
+                Spiritual Dealer exists to hold space for many approaches—so you can find what truly supports your healing, growth, and self-discovery.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pamela Shore Bio Section */}
       <section className="home-pamela-bio" id="pamela">
         <div className="container">
           <div className="home-pamela-content">
@@ -130,15 +166,221 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Work with me — Workshops, Speaking, Practitioner */}
-      <section className="home-how-to-work" id="how-to-work">
+      {/* The Book Section */}
+      <section className="home-book-section" id="book">
+        <div className="home-book-gradient" />
         <div className="container">
-          <h2 className="home-h2">Work with me</h2>
-          <div className="home-how-to-work-buttons">
-            <button type="button" className="home-work-btn" onClick={() => scrollTo('booking')}>Workshops</button>
-            <button type="button" className="home-work-btn" onClick={() => scrollTo('booking')}>Speaking</button>
-            <button type="button" className="home-work-btn" onClick={() => scrollTo('booking')}>Practitioner sessions</button>
-            <button type="button" className="home-work-btn" onClick={() => scrollTo('booking')}>Work with me</button>
+          <div className="home-book-content">
+            <div className="home-book-cover-wrapper">
+              <img src="/The%20book.png" alt="Spiritual Dealer book cover by Pamela Shore" className="home-book-cover" />
+            </div>
+            <div className="home-book-text">
+              <h2 className="home-section-title">The Book</h2>
+              <h3 className="home-book-title">Spiritual Dealer</h3>
+              <p className="home-book-intro-large">A Memoir of Healing, Exploration, and Embodied Transformation</p>
+              <p>
+                Spiritual Dealer is a memoir about searching for answers when traditional paths to healing were not enough.
+              </p>
+              <p>
+                Through personal experience and conversations with practitioners across many disciplines, Pamela Shore explores how trauma, inherited patterns, and life experiences shape the body — and how those patterns can be recognized, understood, and transformed.
+              </p>
+              <button
+                type="button"
+                className="home-hero-btn secondary"
+                onClick={() => setExpandedBook((b) => !b)}
+                aria-expanded={expandedBook}
+              >
+                {expandedBook ? 'Show less' : 'Learn More'}
+              </button>
+            </div>
+          </div>
+
+          <div className={`home-book-expanded ${expandedBook ? 'home-book-expanded--open' : ''}`} id="book-learn-more">
+            <h3 className="home-book-section-label">Learn More — The Book</h3>
+            <h4 className="home-book-title">Spiritual Dealer</h4>
+            <p className="home-book-intro-large">A Memoir of Healing, Exploration, and Embodied Transformation</p>
+            <p>
+              Spiritual Dealer is a personal exploration of healing through alternative and metaphysical practices.
+            </p>
+            <p>
+              This book traces my search for answers through a wide range of healing disciplines, while sharing conversations with the practitioners who helped shape my understanding.
+            </p>
+            <p>I share what worked.<br />What didn&apos;t.<br />And what ultimately led to real transformation.</p>
+            <h3 className="home-book-subsection-title">What the Book Explores</h3>
+            <p>
+              The book examines how trauma, life experiences, and inherited family patterns can become embedded in the body, nervous system, and lineage — influencing health, behavior, and relationships.
+            </p>
+            <p>
+              Through an epigenetic and embodied lens, it explores how these patterns can be recognized, reorganized, and released.
+            </p>
+            <p>
+              Healing is approached not as theory, but as lived experience — emphasizing nervous system regulation and the body&apos;s innate intelligence as foundations for lasting change.
+            </p>
+            <h3 className="home-book-subsection-title">Healing Practices Explored in the Book</h3>
+            <ul className="home-book-list">
+              <li>CranialSacral therapy</li>
+              <li>Hypnotherapy</li>
+              <li>Neurofeedback</li>
+              <li>EMDR</li>
+              <li>Somatic movement</li>
+              <li>Pilates</li>
+              <li>GYROTONIC® / GYROKINESIS®</li>
+              <li>InnerDialogue™</li>
+              <li>BeingHuman Constellation Work™</li>
+              <li>BeingHuman Constellation Card Readings</li>
+              <li>Kinesiology</li>
+              <li>Yoga and meditation traditions</li>
+              <li>Breathwork and nervous system regulation</li>
+              <li>Trauma-informed somatic therapies</li>
+              <li>Epigenetic approaches to inherited patterns</li>
+              <li>Addiction and behavioral healing approaches</li>
+              <li>Plant medicine traditions</li>
+              <li>Shamanic healing practices</li>
+              <li>Psychic and intuitive work</li>
+              <li>Mediumship</li>
+              <li>Energy healing traditions</li>
+              <li>Mind–body integration practices</li>
+            </ul>
+            <h3 className="home-book-subsection-title">Order the Book</h3>
+            <a href="https://a.co/d/08ugNFAj" target="_blank" rel="noopener noreferrer" className="home-hero-btn primary home-book-order-btn">Order the Book</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Audiobook Section */}
+      <section className="home-book-section" id="audiobook">
+        <div className="home-book-gradient" />
+        <div className="container">
+          <div className="home-book-content">
+            <div className="home-book-text">
+              <h2 className="home-section-title">Audiobook</h2>
+              <p className="home-book-intro-large">A spoken journey through healing, embodiment, and lived experience.</p>
+              <p>
+                The Spiritual Dealer audiobook offers a deeply personal and embodied listening experience.
+                Narrated to preserve the tone and intention of the original work, it allows the story and teachings to be received in a more intimate and reflective way.
+              </p>
+              <p>This is not a performance — it is a transmission of lived experience.</p>
+              <p>
+                Through personal stories and exploration across multiple healing disciplines, the audiobook guides listeners through themes of trauma, inherited patterns, nervous system regulation, and the body&apos;s innate intelligence.
+              </p>
+              <h3 className="home-book-subsection-title">What You&apos;ll Hear</h3>
+              <ul className="home-book-list">
+                <li>The role of early life experiences and lineage</li>
+                <li>How patterns become embedded in the nervous system</li>
+                <li>The limits of one-size-fits-all healing approaches</li>
+                <li>Conversations and insights from diverse healing modalities</li>
+                <li>The process of embodied integration</li>
+              </ul>
+              <p className="home-book-empowerment">
+                Spiritual Dealer invites discernment, curiosity, and self-trust. It is an offering for those ready to listen — not only to a voice, but to their own inner awareness.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Press / Media Section */}
+      <section className="home-book-section" id="press-media">
+        <div className="home-book-gradient" />
+        <div className="container">
+          <div className="home-book-content">
+            <div className="home-book-text">
+              <h2 className="home-section-title">Press &amp; Media</h2>
+              <p className="home-book-intro-large">Interviews, features, and conversations exploring embodied healing.</p>
+              <p>
+                Pamela Shore&apos;s work bridges neuro-somatic awareness, movement, and metaphysical healing. Through interviews, written features, and collaborative discussions, she speaks about the integration of body-based processes, inherited patterns, and conscious awareness.
+              </p>
+              <p>Her approach emphasizes grounded, nervous-system-based transformation rather than ideology or prediction.</p>
+              <h3 className="home-book-subsection-title">Topics of Conversation</h3>
+              <ul className="home-book-list">
+                <li>Neuro-somatic movement and embodiment</li>
+                <li>The foundations of InnerDialogue™</li>
+                <li>BeingHuman Constellation Work™</li>
+                <li>Trauma and inherited family patterns</li>
+                <li>Epigenetics and embodied awareness</li>
+                <li>The philosophy behind Spiritual Dealer</li>
+              </ul>
+              <p>
+                <em>Spiritual Dealer</em> has been discussed in conversations surrounding alternative healing, lineage, nervous system integration, and the evolution of personal transformation work. The book offers insight into diverse healing systems without elevating one above another, emphasizing discernment and lived experience.
+              </p>
+              <p>For press requests, interviews, speaking engagements, or collaboration inquiries, please use the contact form on the Connect page.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Journey */}
+      <section className="home-journey">
+        <div className="container">
+          <h2 className="home-section-title">The Journey</h2>
+          <p className="home-journey-intro">Healing is not a straight line.</p>
+          <div className="home-journey-text">
+            <p>
+              The journey moves through uncertainty, resistance, grief, and eventually clarity. Along the way, I encountered gifted healers, intuitive practitioners, and alternative approaches that helped me reconnect with myself in ways traditional systems could not.
+            </p>
+            <p>
+              There are no quick fixes here — only truth, presence, and the understanding that healing unfolds when we stop trying to force it and begin to listen.
+            </p>
+            <p>Step by step, this journey revealed something essential: We are not broken — we are remembering.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* The Spiritual Dealer Community */}
+      <section className="home-book-community" id="community">
+        <div className="home-book-gradient" />
+        <div className="container">
+          <div className="home-book-community-content">
+            <h2 className="home-section-title">The Spiritual Dealer Community</h2>
+            <p className="home-community-subtitle">A Platform for Exploring the Landscape of Healing</p>
+            <div className="home-book-community-text">
+              <p>Spiritual Dealer began as my personal search for answers when traditional paths to healing were not enough.</p>
+              <p>Along that journey I discovered many powerful healing disciplines — yet they often exist across separate traditions and communities with little connection or guidance for those seeking help.</p>
+              <p>The Spiritual Dealer Community is emerging as a platform where seekers and practitioners can come together to explore healing disciplines, share knowledge, and better understand the deeper patterns shaping health, behavior, and life experience.</p>
+              <p><strong>This evolving space brings together practices such as:</strong></p>
+              <ul className="home-book-list">
+                <li>CranialSacral therapy</li>
+                <li>Neurofeedback</li>
+                <li>Hypnotherapy</li>
+                <li>EMDR</li>
+                <li>Somatic and neuro-somatic therapies</li>
+                <li>Pilates, GYROTONIC® and GYROKINESIS®</li>
+                <li>Yoga and meditation traditions</li>
+                <li>Kinesiology</li>
+                <li>Constellation work</li>
+                <li>Plant medicine traditions</li>
+                <li>Shamanic healing practices</li>
+                <li>Psychic and mediumship work</li>
+                <li>Addiction recovery and behavioral healing approaches</li>
+              </ul>
+              <p>Spiritual Dealer is developing a curated network of practitioners, educational offerings, and conversations that help people navigate the many approaches to healing and discover what resonates with their own path.</p>
+              <p>What began as my personal search for answers is becoming a growing resource for those exploring healing, transformation, and the intelligence of the body.</p>
+            </div>
+            <div className="home-community-join" id="join-community">
+              <h3 className="home-book-subsection-title">Join the Community</h3>
+              <p>Stay connected for updates on:</p>
+              <ul className="home-book-list">
+                <li>Upcoming classes and workshops</li>
+                <li>Practitioner conversations and interviews</li>
+                <li>Healing resources and insights</li>
+                <li>Community gatherings and events</li>
+              </ul>
+              <a href="/connect" className="home-hero-btn primary">Join the Community</a>
+              <p className="home-community-join-note">Visitors can join by leaving their email through the contact form.</p>
+            </div>
+            <div className="home-community-contact">
+              <h3 className="home-book-subsection-title">Contact</h3>
+              <p>For questions, collaborations, or to learn more about upcoming events and sessions, please reach out.</p>
+              <a href="/connect" className="home-hero-btn secondary">Contact</a>
+              <div className="home-community-links">
+                {communitySocialLinks.map(({ href, Icon, label }) => (
+                  <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="home-community-link" aria-label={label}>
+                    <Icon className="home-community-link-icon" aria-hidden />
+                    <span>{label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -194,9 +436,8 @@ const Home = () => {
               </p>
               <p className="home-modality-format">Format: In Person</p>
               <a
-                href="#booking"
+                href="/connect"
                 className="home-hero-btn primary"
-                onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}
               >
                 Book Session
               </a>
@@ -245,9 +486,8 @@ const Home = () => {
               </p>
               <p className="home-modality-format">Format: In Person</p>
               <a
-                href="#booking"
+                href="/connect"
                 className="home-hero-btn primary"
-                onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}
               >
                 Book Session
               </a>
@@ -299,9 +539,8 @@ const Home = () => {
               </p>
               <p className="home-modality-format">Format: In Person</p>
               <a
-                href="#booking"
+                href="/connect"
                 className="home-hero-btn primary"
-                onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}
               >
                 Book Session
               </a>
@@ -358,9 +597,8 @@ const Home = () => {
               </p>
               <p className="home-modality-format">Format: Live or Zoom</p>
               <a
-                href="#booking"
+                href="/connect"
                 className="home-hero-btn primary"
-                onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}
               >
                 Book Session
               </a>
@@ -424,9 +662,8 @@ const Home = () => {
               </p>
               <p className="home-modality-format">Format: Live or Zoom</p>
               <a
-                href="#booking"
+                href="/connect"
                 className="home-hero-btn primary"
-                onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}
               >
                 Book Session
               </a>
@@ -456,73 +693,6 @@ const Home = () => {
             <p className="home-modality-description">
               This approach allows the body itself to guide the process, revealing what is ready to be addressed and what needs to be honored in its own timing.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Booking — images + form */}
-      <section className="home-booking" id="booking">
-        <div className="container">
-          <p className="home-booking-intro">
-            Ready to begin? Book a private session, integrated neuro-somatic movement session, or reach out for workshops and speaking.
-          </p>
-          <div className="home-booking-images">
-            <img src="/pilates.png" alt="Pilates" className="home-booking-thumb" />
-            <img src="/3.png" alt="GYROTONIC®" className="home-booking-thumb" />
-            <img src="/integrated%20Somatic.jpeg" alt="Integrated somatic" className="home-booking-thumb" />
-          </div>
-          <div className="home-booking-form-wrap">
-            <BookingSection />
-          </div>
-        </div>
-      </section>
-
-      {/* ========== SECTION 3 — COMMUNITY ========== */}
-      <section className="home-book-community" id="community">
-        <div className="home-book-gradient" />
-        <div className="container">
-          <div className="home-book-community-content">
-            <h2 className="home-section-title">Community</h2>
-            <div className="home-community-visual">
-              <img src="/Community.png" alt="Spiritual Dealer Community" className="home-community-image" />
-            </div>
-            <p className="home-community-subtitle">The Spiritual Dealer Community</p>
-            <div className="home-book-community-text">
-              <p>
-                Spiritual Dealer began as my personal search for answers when traditional paths to healing were not enough.
-                Along that journey I discovered many powerful healing disciplines — yet they often exist across separate traditions and communities with little connection or guidance for those seeking help.
-              </p>
-              <p>
-                The Spiritual Dealer Community is emerging as a platform where seekers and practitioners can come together to explore healing disciplines, share knowledge, and better understand the deeper patterns shaping health, behavior, and life experience.
-              </p>
-            </div>
-            <div className="home-community-join" id="join-community">
-              <h3 className="home-book-subsection-title">Practitioners</h3>
-              <p>Curated practitioner network — coming soon.</p>
-            </div>
-            <div className="home-community-join">
-              <h3 className="home-book-subsection-title">Future modalities (Phase 2)</h3>
-              <p>Additional modalities and resources — coming soon.</p>
-            </div>
-            <div className="home-community-contact">
-              <h3 className="home-book-subsection-title">Join &amp; Contact</h3>
-              <p>Stay connected for updates. For questions or to join the community, reach out via the booking form or connect below.</p>
-              <a
-                href="#booking"
-                className="home-hero-btn secondary"
-                onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}
-              >
-                Contact
-              </a>
-              <div className="home-community-links">
-                {communitySocialLinks.map(({ href, Icon, label }) => (
-                  <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="home-community-link" aria-label={label}>
-                    <Icon className="home-community-link-icon" aria-hidden />
-                    <span>{label}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
