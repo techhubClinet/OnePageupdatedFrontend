@@ -76,7 +76,7 @@ const ServicesPage = () => {
         </>
       ),
       format: 'Live or Zoom',
-      image: '/inner.png',
+      image: '/for%20Innerdialoge%20picture.png',
       imageAlt: 'InnerDialogue™ session',
     },
     {
@@ -90,7 +90,7 @@ const ServicesPage = () => {
         </>
       ),
       format: 'Live or Zoom',
-      image: '/BeingHuman.png',
+      image: '/being%20human%20constelation.png',
       imageAlt: 'BeingHuman Constellation session',
     },
   ];

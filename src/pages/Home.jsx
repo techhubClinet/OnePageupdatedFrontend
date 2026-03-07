@@ -340,6 +340,9 @@ const Home = () => {
           <div className="home-book-community-content">
             <h2 className="home-section-title">The Spiritual Dealer Community</h2>
             <p className="home-community-subtitle">A Platform for Exploring the Landscape of Healing</p>
+            <div className="home-community-visual">
+              <img src="/Community.png" alt="The Spiritual Dealer Community" className="home-community-image" />
+            </div>
             <div className="home-book-community-text">
               <p>Spiritual Dealer began as my personal search for answers when traditional paths to healing were not enough.</p>
               <p>Along that journey I discovered many powerful healing disciplines — yet they often exist across separate traditions and communities with little connection or guidance for those seeking help.</p>
@@ -401,7 +404,10 @@ const Home = () => {
           <h2 className="home-section-title">Modalities</h2>
           
           {/* GYROTONIC® / GYROKINESIS® */}
-          <div className="home-modality-detail">
+          <div className="home-modality-detail home-modality-detail-image-on-top">
+            <div className="home-modality-image-wrapper">
+              <img src="/3.png" alt="GYROTONIC® movement" className="home-modality-image" />
+            </div>
             <h3 className="home-modality-name">GYROTONIC® / GYROKINESIS®</h3>
             <p className="home-modality-description">
               Fluid movement systems that mobilize the spine, improve coordination, and integrate breath with movement.
@@ -455,7 +461,10 @@ const Home = () => {
           </div>
 
           {/* Pilates */}
-          <div className="home-modality-detail">
+          <div className="home-modality-detail home-modality-detail-image-on-top">
+            <div className="home-modality-image-wrapper">
+              <img src="/1.png" alt="Pilates movement" className="home-modality-image" />
+            </div>
             <h3 className="home-modality-name">Pilates</h3>
             <p className="home-modality-description">
               A movement method that strengthens the body, improves posture, and develops coordination between breath, alignment, and muscular support.
@@ -506,7 +515,10 @@ const Home = () => {
           </div>
 
           {/* Integrated Neuro-Somatic Movement Session */}
-          <div className="home-modality-detail">
+          <div className="home-modality-detail home-modality-detail-image-on-top">
+            <div className="home-modality-image-wrapper">
+              <img src="/somatic%20movment%20therapy.jpeg" alt="Integrated neuro-somatic movement" className="home-modality-image" />
+            </div>
             <h3 className="home-modality-name">Integrated Neuro-Somatic Movement Session</h3>
             <p className="home-modality-description">
               A session that integrates movement with neuro-somatic techniques to help reveal and release patterns the body may be holding physically, emotionally, and neurologically.
@@ -560,7 +572,10 @@ const Home = () => {
           </div>
 
           {/* InnerDialogue™ */}
-          <div className="home-modality-detail">
+          <div className="home-modality-detail home-modality-detail-image-on-top">
+            <div className="home-modality-image-wrapper">
+              <img src="/for%20Innerdialoge%20picture.png" alt="InnerDialogue session" className="home-modality-image" />
+            </div>
             <h3 className="home-modality-name">InnerDialogue™</h3>
             <p className="home-modality-description">
               InnerDialogue is a non-directive process that works beneath conscious thought to reveal and integrate internal patterns influencing perception, behavior, and life direction. Unlike traditional therapy, InnerDialogue doesn&apos;t require you to relive past experiences or engage in analysis. Instead, it supports recognition and resolution at a deeper level, allowing understanding to emerge naturally.
@@ -574,7 +589,10 @@ const Home = () => {
           </div>
 
           {/* BeingHuman Constellation Work™ */}
-          <div className="home-modality-detail">
+          <div className="home-modality-detail home-modality-detail-image-on-top">
+            <div className="home-modality-image-wrapper">
+              <img src="/being%20human%20constelation.png" alt="BeingHuman Constellation Work" className="home-modality-image" />
+            </div>
             <h3 className="home-modality-name">BeingHuman Constellation Work™</h3>
             <p className="home-modality-description">
               An experiential process that reveals hidden patterns influencing life, relationships, health, and decision-making.
@@ -619,7 +637,10 @@ const Home = () => {
           </div>
 
           {/* BeingHuman Constellation Card Reading */}
-          <div className="home-modality-detail">
+          <div className="home-modality-detail home-modality-detail-image-on-top">
+            <div className="home-modality-image-wrapper">
+              <img src="/card%20reading.jpeg" alt="BeingHuman Constellation Card Reading" className="home-modality-image" />
+            </div>
             <h3 className="home-modality-name">BeingHuman Constellation Card Reading</h3>
             <p className="home-modality-description">
               A structured reflective system that reveals deeper patterns shaping your life through five realms of human experience.
