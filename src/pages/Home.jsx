@@ -1,68 +1,65 @@
 import React from 'react';
 import HeaderNav from '../components/HeaderNav';
 import Footer from '../components/Footer';
+import BookingSection from '../components/BookingSection';
 import TypingAnimation from '../components/TypingAnimation';
+import { FaGlobe, FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
+import { SiTiktok } from 'react-icons/si';
 import './Home.css';
 
+const communitySocialLinks = [
+  { href: 'https://www.spiritualdealer.com/pamelashore', Icon: FaGlobe, label: 'Website (Pamela Shore)' },
+  { href: 'https://www.instagram.com/spiritualdealer222', Icon: FaInstagram, label: 'Instagram' },
+  { href: 'https://www.facebook.com/SpiritualDealer', Icon: FaFacebook, label: 'Facebook (Spiritual Dealer)' },
+  { href: 'https://www.facebook.com/pamela.shore', Icon: FaFacebook, label: 'Facebook (Pamela Shore)' },
+  { href: 'https://www.tiktok.com/@spiritualdealer222', Icon: SiTiktok, label: 'TikTok' },
+  { href: 'https://www.linkedin.com/in/pamelashore', Icon: FaLinkedin, label: 'LinkedIn' },
+];
+
 const Home = () => {
+  const [expandedModalities, setExpandedModalities] = React.useState({});
+  const toggleModality = (id) => {
+    setExpandedModalities((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
     <div className="App" id="top">
       <HeaderNav />
-      
-      {/* Hero Section */}
-      <section className="home-hero">
-        <div className="home-hero-gradient" />
-        <div className="container">
-          <div className="home-hero-content">
-            <h1 className="home-hero-title">Welcome to Spiritual Dealer</h1>
-            <p className="home-hero-description">
-              Healing, transformation, and community through alternative and metaphysical practices.
-              Explore multiple paths to healing and discover what resonates with your unique journey.
-            </p>
-          </div>
-        </div>
-      </section>
 
-      {/* What is Spiritual Dealer Section */}
-      <section className="home-what-is" id="about">
+      {/* ========== SECTION 1 — BOOK ========== */}
+      <section className="home-book-section" id="book">
+        <div className="home-book-gradient" />
         <div className="container">
-          <div className="home-what-is-content">
-            <h2 className="home-section-title">What is Spiritual Dealer?</h2>
-            <div className="home-what-is-text">
+          <div className="home-book-content">
+            <div className="home-book-cover-wrapper">
+              <img src="/The%20book.png" alt="Spiritual Dealer book cover" className="home-book-cover" />
+            </div>
+            <div className="home-book-text">
+              <h2 className="home-section-title">Book</h2>
+              <h3 className="home-book-title">Spiritual Dealer</h3>
+              <p className="home-book-intro-large">A Memoir of Healing, Exploration, and Embodied Transformation</p>
               <p>
-                Spiritual Dealer is a curated healing community created to support transformation on physical, emotional, and spiritual levels.
+                Spiritual Dealer is a memoir about searching for answers when traditional paths to healing were not enough.
+                Through personal experience and conversations with practitioners across many disciplines, Pamela Shore explores how trauma, inherited patterns, and life experiences shape the body — and how those patterns can be recognized, understood, and transformed.
               </p>
-              <p>
-                Born from lived healing experience, Spiritual Dealer brings together trusted practitioners and diverse modalities—offering pathways beyond conventional approaches and honoring that no two healing journeys are the same.
-              </p>
+              <a
+                href="https://a.co/d/08ugNFAj"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-hero-btn primary home-book-order-btn"
+              >
+                Order the Book
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* It Takes a Village Section */}
-      <section className="home-village">
-        <div className="home-village-gradient" />
-        <div className="container">
-          <div className="home-village-content">
-            <h2 className="home-section-title">It Takes a Village</h2>
-            <div className="home-village-text">
-              <p>
-                Healing is not one-size-fits-all.
-              </p>
-              <p>
-                Some paths move through the body.
-                Others move through the nervous system, energy, memory, or intuition.
-              </p>
-              <p>
-                Spiritual Dealer exists to hold space for many approaches—so you can find what truly supports your healing, growth, and self-discovery.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Pamela Shore Bio Section */}
+      {/* ========== SECTION 2 — PAMELA SHORE ========== */}
+      {/* About Pamela */}
       <section className="home-pamela-bio" id="pamela">
         <div className="container">
           <div className="home-pamela-content">
@@ -74,16 +71,25 @@ const Home = () => {
               />
             </div>
             <div className="home-pamela-text">
-              <h2 className="home-section-title">About Pamela Shore</h2>
+              <h2 className="home-section-title">Pamela Shore</h2>
+              <p className="home-pamela-subtitle">
+                Author • Neuro-Somatic Movement Practitioner • Founder
+              </p>
               <div className="home-pamela-bio-blocks">
                 <p>
-                  After years of searching for answers through countless healing modalities, I created the space I wish I had found during my own healing journey — one that honors the body&apos;s intelligence, the nervous system, and the deeper patterns shaping our lives.
+                  I am the author of Spiritual Dealer and the founder of this community.
                 </p>
                 <p>
-                  My work is rooted in embodied, nervous-system-based processes that support regulation, clarity, and lasting change. Healing is not linear, and awareness alone is not enough — the body must be included for true integration to occur.
+                  My professional foundation began in movement and embodied healing, where I am classically certified in Pilates through the Romana lineage and certified in the GYROTONIC® Method. I have also owned and operated my own studio for more than two decades.
                 </p>
                 <p>
-                  This work led me to create Spiritual Dealer, a space where these modalities can be explored together.
+                  My path expanded beyond movement after navigating personal trauma and searching for deeper healing. This led me to explore integrative disciplines including InnerDialogue™ and BeingHuman Constellation Work™ with Solihin Thom, along with CranialSacral Therapy through the Upledger approach.
+                </p>
+                <p>
+                  Through these studies I developed a deeper understanding of how emotional history, lived experience, and inherited family dynamics influence the nervous system and the expression of DNA and RNA through epigenetic processes.
+                </p>
+                <p>
+                  Today I offer private sessions, workshops, and speaking engagements that integrate movement, neuro-somatic work, and constellation-based methods to help clients uncover patterns the body may be holding and support the process of releasing and reorganizing those patterns.
                 </p>
               </div>
             </div>
@@ -124,178 +130,15 @@ const Home = () => {
         </div>
       </section>
 
-      {/* The Book Section */}
-      <section className="home-book-section" id="book">
-        <div className="home-book-gradient" />
+      {/* Work with me — Workshops, Speaking, Practitioner */}
+      <section className="home-how-to-work" id="how-to-work">
         <div className="container">
-          <div className="home-book-content">
-            <div className="home-book-cover-wrapper">
-              <img
-                src="/The%20book.png"
-                alt="Spiritual Dealer book cover by Pamela Shore"
-                className="home-book-cover"
-              />
-            </div>
-            <div className="home-book-text">
-              <h2 className="home-section-title">The Book</h2>
-              <p className="home-book-intro-large">
-                Many of us move through life with a quiet sense that something is &quot;off.&quot;
-              </p>
-              <p>
-                It may appear as physical pain no doctor can fully explain, emotional weight that never seems to lift, or a
-                feeling of disconnection even when surrounded by others. You try everything you&apos;re told should work —
-                medication, therapy, self-help — yet something still feels unresolved.
-              </p>
-              <p>
-                I know this place intimately. I&apos;ve lived it.
-              </p>
-              <p className="home-book-empowerment">
-                When everything I tried seemed to fail, I turned toward alternative and metaphysical healing methods — not
-                because I was searching for something magical, but because I was searching for truth. What I discovered opened
-                a path I didn&apos;t believe was possible.
-              </p>
-              <p>
-                In <em>Spiritual Dealer</em>, I share my personal journey through these healing modalities — what worked, what
-                didn&apos;t, and what ultimately led to real transformation.
-              </p>
-              <p>
-                This book is an honest exploration of surrender, self-inquiry, and the courage it takes to listen to the body,
-                the nervous system, and the wisdom beneath conscious awareness.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Audiobook Section */}
-      <section className="home-book-section" id="audiobook">
-        <div className="home-book-gradient" />
-        <div className="container">
-          <div className="home-book-content">
-            <div className="home-book-text">
-              <h2 className="home-section-title">Audiobook</h2>
-              <p className="home-book-intro-large">
-                A spoken journey through healing, embodiment, and lived experience.
-              </p>
-              <p>
-                The Spiritual Dealer audiobook offers a deeply personal and embodied listening experience.
-                Narrated to preserve the tone and intention of the original work, it allows the story and
-                teachings to be received in a more intimate and reflective way.
-              </p>
-              <p>
-                This is not a performance — it is a transmission of lived experience.
-              </p>
-              <p>
-                Through personal stories and exploration across multiple healing disciplines, the audiobook
-                guides listeners through themes of trauma, inherited patterns, nervous system regulation,
-                and the body&apos;s innate intelligence.
-              </p>
-              <h3 className="home-book-subsection-title">What You&apos;ll Hear</h3>
-              <ul className="home-book-list">
-                <li>The role of early life experiences and lineage</li>
-                <li>How patterns become embedded in the nervous system</li>
-                <li>The limits of one-size-fits-all healing approaches</li>
-                <li>Conversations and insights from diverse healing modalities</li>
-                <li>The process of embodied integration</li>
-              </ul>
-              <p className="home-book-empowerment">
-                Spiritual Dealer invites discernment, curiosity, and self-trust. It is an offering for
-                those ready to listen — not only to a voice, but to their own inner awareness.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Press / Media Section */}
-      <section className="home-book-section" id="press-media">
-        <div className="home-book-gradient" />
-        <div className="container">
-          <div className="home-book-content">
-            <div className="home-book-text">
-              <h2 className="home-section-title">Press &amp; Media</h2>
-              <p className="home-book-intro-large">
-                Interviews, features, and conversations exploring embodied healing.
-              </p>
-              <p>
-                Pamela Shore&apos;s work bridges neuro-somatic awareness, movement, and metaphysical healing.
-                Through interviews, written features, and collaborative discussions, she speaks about the
-                integration of body-based processes, inherited patterns, and conscious awareness.
-              </p>
-              <p>
-                Her approach emphasizes grounded, nervous-system-based transformation rather than ideology
-                or prediction.
-              </p>
-              <h3 className="home-book-subsection-title">Topics of Conversation</h3>
-              <ul className="home-book-list">
-                <li>Neuro-somatic movement and embodiment</li>
-                <li>The foundations of InnerDialogue™</li>
-                <li>BeingHuman Constellation Work™</li>
-                <li>Trauma and inherited family patterns</li>
-                <li>Epigenetics and embodied awareness</li>
-                <li>The philosophy behind Spiritual Dealer</li>
-              </ul>
-              <p>
-                <em>Spiritual Dealer</em> has been discussed in conversations surrounding alternative
-                healing, lineage, nervous system integration, and the evolution of personal transformation
-                work. The book offers insight into diverse healing systems without elevating one above another,
-                emphasizing discernment and lived experience.
-              </p>
-              <p>
-                For press requests, interviews, speaking engagements, or collaboration inquiries,
-                please use the contact form on the Connect page.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Journey */}
-      <section className="home-journey">
-        <div className="container">
-          <h2 className="home-section-title">The Journey</h2>
-          <p className="home-journey-intro">
-            Healing is not a straight line.
-          </p>
-          <div className="home-journey-text">
-            <p>
-              The journey moves through uncertainty, resistance, grief, and eventually clarity. Along the way, I encountered
-              gifted healers, intuitive practitioners, and alternative approaches that helped me reconnect with myself in ways
-              traditional systems could not.
-            </p>
-            <p>
-              There are no quick fixes here — only truth, presence, and the understanding that healing unfolds when we stop
-              trying to force it and begin to listen.
-            </p>
-            <p>
-              Step by step, this journey revealed something essential: We are not broken — we are remembering.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* From Book to Community */}
-      <section className="home-book-community">
-        <div className="home-book-gradient" />
-        <div className="container">
-          <div className="home-book-community-content">
-            <h2 className="home-section-title">From Book to Community</h2>
-            <div className="home-book-community-text">
-              <p>
-                Through this journey, I had the privilege of working with exceptional intuitive healers — individuals who helped
-                me access my own healing and discover my unique gifts.
-              </p>
-              <p>
-                That experience became the foundation for Spiritual Dealer.
-              </p>
-              <p>
-                Spiritual Dealer was created as a community to support others on their healing journeys — bringing together many
-                of the gifted practitioners who offered guidance, insight, and healing along my own path.
-              </p>
-              <p className="home-book-community-cta">
-                This book is the doorway. The community is the continuation.
-              </p>
-            </div>
+          <h2 className="home-h2">Work with me</h2>
+          <div className="home-how-to-work-buttons">
+            <button type="button" className="home-work-btn" onClick={() => scrollTo('booking')}>Workshops</button>
+            <button type="button" className="home-work-btn" onClick={() => scrollTo('booking')}>Speaking</button>
+            <button type="button" className="home-work-btn" onClick={() => scrollTo('booking')}>Practitioner sessions</button>
+            <button type="button" className="home-work-btn" onClick={() => scrollTo('booking')}>Work with me</button>
           </div>
         </div>
       </section>
@@ -306,26 +149,163 @@ const Home = () => {
         <div className="container">
           <h2 className="home-section-title">Modalities</h2>
           
-          {/* Gyrotonic® */}
+          {/* GYROTONIC® / GYROKINESIS® */}
           <div className="home-modality-detail">
-            <h3 className="home-modality-name">GYROTONIC®</h3>
+            <h3 className="home-modality-name">GYROTONIC® / GYROKINESIS®</h3>
             <p className="home-modality-description">
-              GYROTONIC® is a movement system that emphasizes fluid, three-dimensional movement patterns. Unlike linear exercise approaches, GYROTONIC® works with the body&apos;s natural spiraling and circular movements, supporting spinal articulation, joint space, and overall mobility.
+              Fluid movement systems that mobilize the spine, improve coordination, and integrate breath with movement.
             </p>
             <p className="home-modality-description">
-              This practice has been essential in my understanding of how movement can support nervous system regulation and how physical patterns are connected to emotional and energetic patterns. The equipment-based sessions allow for precise, supportive movement that adapts to each person&apos;s unique needs and limitations and are suitable for all ages.
+              These methods develop strength, flexibility, and nervous system balance through rhythmic, three-dimensional movement patterns.
             </p>
+            <button
+              type="button"
+              className="home-hero-btn secondary home-modality-learn-btn"
+              onClick={() => toggleModality('gyrotonic')}
+              aria-expanded={!!expandedModalities.gyrotonic}
+            >
+              {expandedModalities.gyrotonic ? 'Show less' : 'Learn More'}
+            </button>
+
+            <div className={`home-modality-expanded ${expandedModalities.gyrotonic ? 'home-modality-expanded--open' : ''}`} id="gyrotonic-detail">
+              <p className="home-modality-description">
+                The GYROTONIC® and GYROKINESIS® movement systems mobilize the spine, strengthen the body, and coordinate breath with movement.
+              </p>
+              <p className="home-modality-description">
+                Through circular and spiraling patterns, the body releases tension, improves range of motion, and supports healthy joint function while building strength and flexibility simultaneously.
+              </p>
+              <p className="home-modality-description">
+                GYROTONIC® sessions use specialized equipment that guides movement through full spinal articulation while strengthening and lengthening the body.
+              </p>
+              <p className="home-modality-description">
+                GYROKINESIS® classes are performed on a stool or mat using body weight and breath to create rhythmic sequences that stimulate circulation, mobilize joints, and support nervous system regulation.
+              </p>
+              <p className="home-modality-description"><strong>These methods support:</strong></p>
+              <ul className="home-book-list">
+                <li>Spinal mobility</li>
+                <li>Joint health</li>
+                <li>Breath integration</li>
+                <li>Nervous system balance</li>
+                <li>Coordination and strength</li>
+                <li>Posture and body awareness</li>
+              </ul>
+              <p className="home-modality-description">
+                Working with spiraling and circular movement patterns allows the body to release long-held tension and develop more efficient movement.
+              </p>
+              <p className="home-modality-format">Format: In Person</p>
+              <a
+                href="#booking"
+                className="home-hero-btn primary"
+                onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}
+              >
+                Book Session
+              </a>
+            </div>
           </div>
 
-          {/* Classical Pilates */}
+          {/* Pilates */}
           <div className="home-modality-detail">
-            <h3 className="home-modality-name">Classical Pilates</h3>
+            <h3 className="home-modality-name">Pilates</h3>
             <p className="home-modality-description">
-              Pilates sessions emphasize alignment, breath, and precision to build strength while supporting balance and functional movement.
+              A movement method that strengthens the body, improves posture, and develops coordination between breath, alignment, and muscular support.
+            </p>
+            <button
+              type="button"
+              className="home-hero-btn secondary home-modality-learn-btn"
+              onClick={() => toggleModality('pilates')}
+              aria-expanded={!!expandedModalities.pilates}
+            >
+              {expandedModalities.pilates ? 'Show less' : 'Learn More'}
+            </button>
+
+            <div className={`home-modality-expanded ${expandedModalities.pilates ? 'home-modality-expanded--open' : ''}`} id="pilates-detail">
+              <p className="home-modality-description">
+                Pilates is a system of movement designed to develop strength, flexibility, and body awareness.
+              </p>
+              <p className="home-modality-description">
+                The method emphasizes alignment, control, and coordination between breath and movement to restore balance within the musculoskeletal system.
+              </p>
+              <p className="home-modality-description">
+                Exercises performed on specialized equipment or a mat strengthen the deep stabilizing muscles that support the spine and pelvis.
+              </p>
+              <p className="home-modality-description">
+                Rather than isolating muscles, Pilates trains the body as an integrated system, improving coordination, posture, and movement efficiency.
+              </p>
+              <p className="home-modality-description"><strong>Pilates supports:</strong></p>
+              <ul className="home-book-list">
+                <li>Core strength</li>
+                <li>Spinal alignment</li>
+                <li>Postural balance</li>
+                <li>Joint stability</li>
+                <li>Mobility and control</li>
+                <li>Injury prevention and rehabilitation</li>
+              </ul>
+              <p className="home-modality-description">
+                Over time, Pilates helps individuals move with greater strength, awareness, and ease.
+              </p>
+              <p className="home-modality-format">Format: In Person</p>
+              <a
+                href="#booking"
+                className="home-hero-btn primary"
+                onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}
+              >
+                Book Session
+              </a>
+            </div>
+          </div>
+
+          {/* Integrated Neuro-Somatic Movement Session */}
+          <div className="home-modality-detail">
+            <h3 className="home-modality-name">Integrated Neuro-Somatic Movement Session</h3>
+            <p className="home-modality-description">
+              A session that integrates movement with neuro-somatic techniques to help reveal and release patterns the body may be holding physically, emotionally, and neurologically.
             </p>
             <p className="home-modality-description">
-              Classical Pilates follows a structured order of exercises that organizes strength, alignment, and coordination through a conscious connection between mind, breath, and movement.
+              By combining Pilates or GYROTONIC® movement with somatic awareness and kinesiology, these sessions support greater alignment, nervous system regulation, and embodied transformation.
             </p>
+            <button
+              type="button"
+              className="home-hero-btn secondary home-modality-learn-btn"
+              onClick={() => toggleModality('integrated')}
+              aria-expanded={!!expandedModalities.integrated}
+            >
+              {expandedModalities.integrated ? 'Show less' : 'Learn More'}
+            </button>
+
+            <div className={`home-modality-expanded ${expandedModalities.integrated ? 'home-modality-expanded--open' : ''}`} id="integrated-session-detail">
+              <p className="home-modality-description">
+                Integrated Neuro-Somatic Movement Sessions combine movement practices with neuro-somatic processes to address not only how the body moves, but what the body may be holding.
+              </p>
+              <p className="home-modality-description">
+                Through movement, kinesiology, and somatic awareness, patterns influencing posture, tension, and recurring physical challenges can begin to emerge.
+              </p>
+              <p className="home-modality-description">
+                Often the body carries emotional experiences, survival responses, and inherited patterns that influence movement and nervous system regulation without conscious awareness.
+              </p>
+              <p className="home-modality-description">
+                When these patterns are recognized, the work moves into integration through guided movement and somatic techniques, allowing the body to reorganize physically rather than simply understanding the pattern intellectually.
+              </p>
+              <p className="home-modality-description"><strong>Sessions may include:</strong></p>
+              <ul className="home-book-list">
+                <li>GYROTONIC® or Pilates movement</li>
+                <li>Somatic movement practices</li>
+                <li>Kinesiology</li>
+                <li>Cranial work</li>
+                <li>Breath integration</li>
+                <li>Nervous system regulation techniques</li>
+              </ul>
+              <p className="home-modality-description">
+                This integrated approach helps release long-held tension, improve coordination, and support the body&apos;s natural capacity for balance and resilience.
+              </p>
+              <p className="home-modality-format">Format: In Person</p>
+              <a
+                href="#booking"
+                className="home-hero-btn primary"
+                onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}
+              >
+                Book Session
+              </a>
+            </div>
           </div>
 
           {/* InnerDialogue™ */}
@@ -342,15 +322,115 @@ const Home = () => {
             </p>
           </div>
 
-          {/* BeingHuman Constellation Work */}
+          {/* BeingHuman Constellation Work™ */}
           <div className="home-modality-detail">
             <h3 className="home-modality-name">BeingHuman Constellation Work™</h3>
             <p className="home-modality-description">
-              BeingHuman constellation work is an experiential process that reveals hidden system dynamics. The work orients you to the patterns you are living inside of rather than offering prediction.
+              An experiential process that reveals hidden patterns influencing life, relationships, health, and decision-making.
             </p>
+            <button
+              type="button"
+              className="home-hero-btn secondary home-modality-learn-btn"
+              onClick={() => toggleModality('beinghuman')}
+              aria-expanded={!!expandedModalities.beinghuman}
+            >
+              {expandedModalities.beinghuman ? 'Show less' : 'Learn More'}
+            </button>
+
+            <div className={`home-modality-expanded ${expandedModalities.beinghuman ? 'home-modality-expanded--open' : ''}`} id="beinghuman-detail">
+              <p className="home-modality-description">
+                BeingHuman Constellation Work, developed by Dr. Solihin Thom and Alicia Thom, is an experiential process that reveals hidden systemic patterns influencing a person&apos;s life.
+              </p>
+              <p className="home-modality-description">
+                A constellation refers to the placement and relationship of elements within a system — whether within an individual, family, organization, or collective field.
+              </p>
+              <p className="home-modality-description">
+                When parts of a system are misaligned or missing, repeating challenges or internal conflict can arise.
+              </p>
+              <p className="home-modality-description">
+                These dynamics often exist beneath conscious awareness but strongly influence behavior, emotional responses, relationships, and life direction.
+              </p>
+              <p className="home-modality-description">
+                Through this process, these patterns can be recognized and reorganized, allowing individuals to access greater clarity, alignment, and personal resources.
+              </p>
+              <p className="home-modality-description">
+                BeingHuman Constellation Work explores the inner architecture of the human being across emotional, behavioral, relational, and spiritual dimensions.
+              </p>
+              <p className="home-modality-format">Format: Live or Zoom</p>
+              <a
+                href="#booking"
+                className="home-hero-btn primary"
+                onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}
+              >
+                Book Session
+              </a>
+            </div>
+          </div>
+
+          {/* BeingHuman Constellation Card Reading */}
+          <div className="home-modality-detail">
+            <h3 className="home-modality-name">BeingHuman Constellation Card Reading</h3>
             <p className="home-modality-description">
-              This work explores deeper orders of connection beyond traditional Family Constellations, addressing spiritual, energetic, and existential dimensions.
+              A structured reflective system that reveals deeper patterns shaping your life through five realms of human experience.
             </p>
+            <button
+              type="button"
+              className="home-hero-btn secondary home-modality-learn-btn"
+              onClick={() => toggleModality('cardReading')}
+              aria-expanded={!!expandedModalities.cardReading}
+            >
+              {expandedModalities.cardReading ? 'Show less' : 'Learn More'}
+            </button>
+
+            <div className={`home-modality-expanded ${expandedModalities.cardReading ? 'home-modality-expanded--open' : ''}`} id="card-reading-detail">
+              <p className="home-modality-description">
+                BeingHuman Constellation Card Readings use a structured system developed by Dr. Solihin Thom to reveal patterns influencing your current life experience and the direction that may support meaningful change.
+              </p>
+              <p className="home-modality-description">
+                Unlike tarot or oracle cards used for prediction, these cards are a reflective tool designed to illuminate a person&apos;s present state across multiple dimensions of being.
+              </p>
+
+              <h4 className="home-book-subsection-title">The Five Realms of Being</h4>
+              <p className="home-modality-description">
+                A standard reading uses five cards representing fundamental realms of experience:
+              </p>
+              <ul className="home-book-list home-modality-realm-list">
+                <li><strong>Material</strong> — Physical reality, the body, DNA, and tangible life conditions.</li>
+                <li><strong>Vegetal</strong> — Feelings, nourishment, growth, and emotional life.</li>
+                <li><strong>Instinctual</strong> — Behavior, habits, and survival responses.</li>
+                <li><strong>Human</strong> — Mindfulness, beliefs, and meaning-making.</li>
+                <li><strong>Portal</strong> — The threshold through which interpretation is surrendered to the greater Implicate Reality — God, Source, or the Sacred as one understands it.</li>
+              </ul>
+              <p className="home-modality-description">
+                Cards are placed vertically, revealing the relationship between these realms.
+              </p>
+
+              <h4 className="home-book-subsection-title">The Reading Process</h4>
+              <p className="home-modality-description">
+                A reading begins with a clear question or intention.<br />
+                Cards are drawn for each realm, revealing the pattern influencing the person or situation.<br />
+                Often the full picture becomes clear only once all five cards are revealed together.
+              </p>
+              <p className="home-modality-description">
+                <strong>Additional cards may include:</strong>
+              </p>
+              <ul className="home-book-list">
+                <li><strong>Clue Card</strong> – offering nuance or summary insight</li>
+                <li><strong>Help Card</strong> – revealing the step that supports integration or change</li>
+              </ul>
+              <p className="home-modality-description">
+                BeingHuman Constellation Card Readings are not predictive.<br />
+                They are designed to support awareness, self-discovery, and meaningful transformation.
+              </p>
+              <p className="home-modality-format">Format: Live or Zoom</p>
+              <a
+                href="#booking"
+                className="home-hero-btn primary"
+                onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}
+              >
+                Book Session
+              </a>
+            </div>
           </div>
 
           {/* Cranial Fluid Dynamics */}
@@ -376,6 +456,73 @@ const Home = () => {
             <p className="home-modality-description">
               This approach allows the body itself to guide the process, revealing what is ready to be addressed and what needs to be honored in its own timing.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Booking — images + form */}
+      <section className="home-booking" id="booking">
+        <div className="container">
+          <p className="home-booking-intro">
+            Ready to begin? Book a private session, integrated neuro-somatic movement session, or reach out for workshops and speaking.
+          </p>
+          <div className="home-booking-images">
+            <img src="/pilates.png" alt="Pilates" className="home-booking-thumb" />
+            <img src="/3.png" alt="GYROTONIC®" className="home-booking-thumb" />
+            <img src="/integrated%20Somatic.jpeg" alt="Integrated somatic" className="home-booking-thumb" />
+          </div>
+          <div className="home-booking-form-wrap">
+            <BookingSection />
+          </div>
+        </div>
+      </section>
+
+      {/* ========== SECTION 3 — COMMUNITY ========== */}
+      <section className="home-book-community" id="community">
+        <div className="home-book-gradient" />
+        <div className="container">
+          <div className="home-book-community-content">
+            <h2 className="home-section-title">Community</h2>
+            <div className="home-community-visual">
+              <img src="/Community.png" alt="Spiritual Dealer Community" className="home-community-image" />
+            </div>
+            <p className="home-community-subtitle">The Spiritual Dealer Community</p>
+            <div className="home-book-community-text">
+              <p>
+                Spiritual Dealer began as my personal search for answers when traditional paths to healing were not enough.
+                Along that journey I discovered many powerful healing disciplines — yet they often exist across separate traditions and communities with little connection or guidance for those seeking help.
+              </p>
+              <p>
+                The Spiritual Dealer Community is emerging as a platform where seekers and practitioners can come together to explore healing disciplines, share knowledge, and better understand the deeper patterns shaping health, behavior, and life experience.
+              </p>
+            </div>
+            <div className="home-community-join" id="join-community">
+              <h3 className="home-book-subsection-title">Practitioners</h3>
+              <p>Curated practitioner network — coming soon.</p>
+            </div>
+            <div className="home-community-join">
+              <h3 className="home-book-subsection-title">Future modalities (Phase 2)</h3>
+              <p>Additional modalities and resources — coming soon.</p>
+            </div>
+            <div className="home-community-contact">
+              <h3 className="home-book-subsection-title">Join &amp; Contact</h3>
+              <p>Stay connected for updates. For questions or to join the community, reach out via the booking form or connect below.</p>
+              <a
+                href="#booking"
+                className="home-hero-btn secondary"
+                onClick={(e) => { e.preventDefault(); document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' }); }}
+              >
+                Contact
+              </a>
+              <div className="home-community-links">
+                {communitySocialLinks.map(({ href, Icon, label }) => (
+                  <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="home-community-link" aria-label={label}>
+                    <Icon className="home-community-link-icon" aria-hidden />
+                    <span>{label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

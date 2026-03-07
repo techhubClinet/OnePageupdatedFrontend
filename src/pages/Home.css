@@ -41,6 +41,10 @@
   padding: 0 2rem;
 }
 
+.home-hero-content .home-hero-btn {
+  margin-top: 2.5rem;
+}
+
 .home-hero-title {
   font-size: 5rem;
   font-weight: 350;
@@ -59,6 +63,23 @@
   margin: 0 auto 3rem;
   font-weight: 300;
   letter-spacing: -0.01em;
+}
+
+.home-hero-prose {
+  margin-bottom: 2rem;
+}
+
+.home-hero-prose p {
+  font-size: 1.2rem;
+  line-height: 1.85;
+  color: #475569;
+  margin-bottom: 1.25rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+.home-hero-prose p:last-child {
+  margin-bottom: 0;
 }
 
 .home-hero-actions {
@@ -509,6 +530,14 @@
   gap: 2rem;
 }
 
+.home-pamela-subtitle {
+  font-size: 1.125rem;
+  color: #64748b;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin: -0.5rem 0 0;
+}
+
 .home-pamela-bio-blocks {
   display: flex;
   flex-direction: column;
@@ -645,6 +674,11 @@
   margin-bottom: 0;
 }
 
+.home-book-text .home-hero-btn {
+  margin-top: 1rem;
+  display: inline-block;
+}
+
 .home-book-intro-large {
   font-size: 1.5rem;
   line-height: 1.8;
@@ -663,6 +697,79 @@
   border-left: 4px solid #2563eb;
   border-radius: 8px;
   margin: 2rem 0;
+}
+
+.home-book-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.home-book-section-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+.home-book-expanded {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.25s ease;
+}
+
+.home-book-expanded--open {
+  max-height: 5000px;
+  opacity: 1;
+  padding: 2rem 2rem 2rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.home-book-expanded .home-book-title {
+  margin-top: 0;
+}
+
+.home-book-expanded p {
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: #475569;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.home-book-expanded .home-book-subsection-title {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home-book-expanded .home-book-list {
+  margin-bottom: 2rem;
+}
+
+.home-book-amazon-link {
+  color: #2563eb;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.home-book-amazon-link:hover {
+  text-decoration: underline;
+}
+
+.home-book-order-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  text-decoration: none;
 }
 
 /* Journey Section */
@@ -752,6 +859,106 @@
 
 .home-book-community-text p:last-child {
   margin-bottom: 0;
+}
+
+.home-book-community-text .home-book-list {
+  margin: 1rem 0 1.5rem;
+}
+
+.home-community-subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  font-weight: 400;
+  margin: -0.25rem 0 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.home-community-visual {
+  margin: 0 auto 1.5rem;
+  text-align: center;
+}
+
+.home-community-image {
+  max-width: 100%;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.home-community-join {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.home-community-join p {
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: #475569;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.home-community-join .home-book-list {
+  margin: 0.5rem 0 1.5rem;
+}
+
+.home-community-join .home-hero-btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.home-community-join-note {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.home-community-contact {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(37, 99, 235, 0.08);
+}
+
+.home-community-contact p {
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: #475569;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.home-community-contact .home-hero-btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.home-community-links {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+.home-community-link {
+  font-size: 0.95rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.home-community-link:hover {
+  text-decoration: underline;
+}
+
+.home-community-link-icon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
 }
 
 .home-book-community-cta {
@@ -907,6 +1114,46 @@
 
 .home-modality-description:last-child {
   margin-bottom: 0;
+}
+
+.home-modality-learn-btn {
+  display: inline-block;
+  margin-bottom: 2rem;
+  text-decoration: none;
+}
+
+.home-modality-expanded {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+  transition: max-height 0.4s ease, opacity 0.25s ease;
+}
+
+.home-modality-expanded--open {
+  max-height: 3000px;
+  opacity: 1;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.home-modality-expanded .home-book-list {
+  margin-bottom: 1.5rem;
+}
+
+.home-modality-format {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.home-modality-expanded .home-hero-btn {
+  display: inline-block;
+  text-decoration: none;
 }
 
 .home-book-subsection-title {

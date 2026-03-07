@@ -46,6 +46,7 @@
 }
 
 .header-links a,
+.header-links .header-nav-link,
 .header-links button {
   position: relative;
   padding-bottom: 4px;
@@ -59,6 +60,7 @@
 }
 
 .header-links a::after,
+.header-links .header-nav-link::after,
 .header-links button::after {
   content: '';
   position: absolute;
@@ -71,13 +73,16 @@
 }
 
 .header-links a:hover::after,
+.header-links .header-nav-link:hover::after,
 .header-links a.active::after,
+.header-links .header-nav-link.active::after,
 .header-links button:hover::after,
 .header-links button.active::after {
   width: 100%;
 }
 
 .header-links a.active,
+.header-links .header-nav-link.active,
 .header-links button.active {
   color: #1e40af;
   font-weight: 600;

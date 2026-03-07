@@ -41,6 +41,33 @@
   margin: 0 auto;
 }
 
+.footer-connect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+
+.footer-connect-link {
+  font-size: 0.9rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-connect-link:hover {
+  color: #3b82f6;
+}
+
+.footer-connect-icon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
 .footer-nav {
   display: flex;
   align-items: center;
