@@ -2,6 +2,7 @@ import React from 'react';
 import HeaderNav from '../components/HeaderNav';
 import Footer from '../components/Footer';
 import TypingAnimation from '../components/TypingAnimation';
+import BookingSection from '../components/BookingSection';
 import { FaGlobe, FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { SiTiktok } from 'react-icons/si';
 import './Home.css';
@@ -371,7 +372,9 @@ const Home = () => {
             <div className="home-community-contact">
               <h3 className="home-book-subsection-title">Contact</h3>
               <p>For questions, collaborations, or to learn more about upcoming events and sessions, please reach out.</p>
-              <a href="/connect" className="home-hero-btn secondary">Contact</a>
+              <div className="home-community-contact-form">
+                <BookingSection embedded />
+              </div>
               <div className="home-community-links">
                 {communitySocialLinks.map(({ href, Icon, label }) => (
                   <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="home-community-link" aria-label={label}>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import apiClient from '../config/axios';
 import './BookingSection.css';
 
-const BookingSection = () => {
+const BookingSection = ({ embedded = false }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -59,6 +59,105 @@ const BookingSection = () => {
   };
 
   return (
+    <>
+      {embedded ? (
+        <div className="booking-section booking-section--embedded">
+          <div className="booking-form-container">
+            <form className="booking-form" onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="email">Email *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="sessionType">Session Type *</label>
+              <select
+                id="sessionType"
+                name="sessionType"
+                value={formData.sessionType}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select a session type</option>
+                {sessionTypes.map((type, index) => (
+                  <option key={index} value={type}>{type}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="preferredDate">Preferred Date *</label>
+                <input
+                  type="date"
+                  id="preferredDate"
+                  name="preferredDate"
+                  value={formData.preferredDate}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="preferredTime">Preferred Time *</label>
+                <input
+                  type="time"
+                  id="preferredTime"
+                  name="preferredTime"
+                  value={formData.preferredTime}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="message">Message (Optional)</label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows="4"
+              />
+            </div>
+
+            {submitStatus && (
+              <div className={`submit-status ${submitStatus.type}`}>
+                {submitStatus.message}
+              </div>
+            )}
+
+            <button 
+              type="submit" 
+              className="submit-button"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Submitting...' : 'Submit Booking Request'}
+            </button>
+            </form>
+          </div>
+        </div>
+      ) : (
     <section className="booking-section">
       <div className="container">
         <h2 className="section-title">Book a Session</h2>
@@ -161,6 +260,8 @@ const BookingSection = () => {
         </div>
       </div>
     </section>
+      )}
+    </>
   );
 };
 
