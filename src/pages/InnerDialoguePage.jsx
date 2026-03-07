@@ -20,7 +20,7 @@ const InnerDialoguePage = () => {
               and integrate internal patterns influencing perception, behavior, and life direction.
             </p>
             <div className="modality-hero-actions">
-              <Link to="/booking" className="modality-primary-cta">
+              <Link to="/#contact" className="modality-primary-cta">
                 Book a Session
               </Link>
             </div>
@@ -63,7 +63,7 @@ const InnerDialoguePage = () => {
           <h2 className="modality-section-title">Format</h2>
           <p className="modality-body-text">Live or Zoom.</p>
           <div className="modality-bottom-cta">
-            <Link to="/booking" className="modality-primary-cta">
+            <Link to="/#contact" className="modality-primary-cta">
               Book a Session
             </Link>
           </div>

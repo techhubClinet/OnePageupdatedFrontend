@@ -22,6 +22,12 @@ const Home = () => {
   const toggleModality = (id) => {
     setExpandedModalities((prev) => ({ ...prev, [id]: !prev[id] }));
   };
+  React.useEffect(() => {
+    if (window.location.hash === '#contact') {
+      const el = document.getElementById('contact');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, []);
   return (
     <div className="App" id="top">
       <HeaderNav />
@@ -366,10 +372,10 @@ const Home = () => {
                 <li>Healing resources and insights</li>
                 <li>Community gatherings and events</li>
               </ul>
-              <a href="/connect" className="home-hero-btn primary">Join the Community</a>
+              <a href="#contact" className="home-hero-btn primary" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Join the Community</a>
               <p className="home-community-join-note">Visitors can join by leaving their email through the contact form.</p>
             </div>
-            <div className="home-community-contact">
+            <div className="home-community-contact" id="contact">
               <h3 className="home-book-subsection-title">Contact</h3>
               <p>For questions, collaborations, or to learn more about upcoming events and sessions, please reach out.</p>
               <div className="home-community-contact-form">
@@ -439,8 +445,9 @@ const Home = () => {
               </p>
               <p className="home-modality-format">Format: In Person</p>
               <a
-                href="/connect"
+                href="#contact"
                 className="home-hero-btn primary"
+                onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
               >
                 Book Session
               </a>
@@ -489,8 +496,9 @@ const Home = () => {
               </p>
               <p className="home-modality-format">Format: In Person</p>
               <a
-                href="/connect"
+                href="#contact"
                 className="home-hero-btn primary"
+                onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
               >
                 Book Session
               </a>
@@ -542,8 +550,9 @@ const Home = () => {
               </p>
               <p className="home-modality-format">Format: In Person</p>
               <a
-                href="/connect"
+                href="#contact"
                 className="home-hero-btn primary"
+                onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
               >
                 Book Session
               </a>
@@ -600,8 +609,9 @@ const Home = () => {
               </p>
               <p className="home-modality-format">Format: Live or Zoom</p>
               <a
-                href="/connect"
+                href="#contact"
                 className="home-hero-btn primary"
+                onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
               >
                 Book Session
               </a>
@@ -665,8 +675,9 @@ const Home = () => {
               </p>
               <p className="home-modality-format">Format: Live or Zoom</p>
               <a
-                href="/connect"
+                href="#contact"
                 className="home-hero-btn primary"
+                onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
               >
                 Book Session
               </a>

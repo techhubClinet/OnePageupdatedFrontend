@@ -202,7 +202,7 @@ const BookPage = () => {
           </div>
 
           <div className="book-sessions-cta">
-            <Link to="/booking" className="book-cta-button">
+            <Link to="/#contact" className="book-cta-button">
               Book a Session
             </Link>
             <Link to="/pamelashore" className="book-cta-button-secondary">

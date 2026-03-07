@@ -36,6 +36,7 @@ const Footer = () => {
           <a href="/#book" className="footer-nav-link">The Book</a>
           <a href="/#modalities" className="footer-nav-link">Modalities</a>
           <a href="/#community" className="footer-nav-link">Community</a>
+          <a href="/#contact" className="footer-nav-link">Contact</a>
           <Link to="/admin" className="footer-nav-link">Admin</Link>
         </nav>
       </div>

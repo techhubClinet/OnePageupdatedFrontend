@@ -20,7 +20,7 @@ const SpiritualDealerModalityPage = () => {
               spiritual levels, with a focus on nervous system regulation and embodied awareness.
             </p>
             <div className="modality-hero-actions">
-              <Link to="/booking" className="modality-primary-cta">
+              <Link to="/#contact" className="modality-primary-cta">
                 Book a Session
               </Link>
             </div>
@@ -74,7 +74,7 @@ const SpiritualDealerModalityPage = () => {
             modality.
           </p>
           <div className="modality-bottom-cta">
-            <Link to="/booking" className="modality-primary-cta">
+            <Link to="/#contact" className="modality-primary-cta">
               Book a Session
             </Link>
           </div>

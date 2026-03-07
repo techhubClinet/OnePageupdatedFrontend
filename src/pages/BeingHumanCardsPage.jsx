@@ -20,7 +20,7 @@ const BeingHumanCardsPage = () => {
               to reveal present-time patterns.
             </p>
             <div className="modality-hero-actions">
-              <Link to="/booking" className="modality-primary-cta">
+              <Link to="/#contact" className="modality-primary-cta">
                 Book a Session
               </Link>
             </div>
@@ -50,7 +50,7 @@ const BeingHumanCardsPage = () => {
           <h2 className="modality-section-title">Format</h2>
           <p className="modality-body-text">Live or Zoom.</p>
           <div className="modality-bottom-cta">
-            <Link to="/booking" className="modality-primary-cta">
+            <Link to="/#contact" className="modality-primary-cta">
               Book a Session
             </Link>
           </div>

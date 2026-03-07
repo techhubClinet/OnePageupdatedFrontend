@@ -19,7 +19,7 @@ const AudiobookPage = () => {
               A spoken journey through healing, embodiment, and lived experience.
             </p>
             <div className="modality-hero-actions">
-              <Link to="/booking" className="modality-primary-cta">
+              <Link to="/#contact" className="modality-primary-cta">
                 Listen Now
               </Link>
             </div>
@@ -83,7 +83,7 @@ const AudiobookPage = () => {
             those ready to listen — not only to a voice, but to their own inner awareness.
           </p>
           <div className="modality-bottom-cta">
-            <Link to="/booking" className="modality-primary-cta">
+            <Link to="/#contact" className="modality-primary-cta">
               Listen Now
             </Link>
           </div>

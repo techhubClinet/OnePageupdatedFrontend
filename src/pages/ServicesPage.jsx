@@ -143,7 +143,7 @@ const ServicesPage = () => {
                       {service.description}
                     </div>
                     <div className="service-cta-row">
-                      <Link to="/connect#booking" className="service-cta-button">
+                      <Link to="/#contact" className="service-cta-button">
                         Book a Session
                       </Link>
                     </div>
@@ -294,7 +294,7 @@ const ServicesPage = () => {
               where you feel called — clarity unfolds through the process.
             </p>
             <div className="services-not-sure-actions">
-              <Link to="/connect#booking" className="service-cta-button primary">
+              <Link to="/#contact" className="service-cta-button primary">
                 Book a Session
               </Link>
               <Link to="/" className="service-cta-button secondary">

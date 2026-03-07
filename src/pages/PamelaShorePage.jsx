@@ -134,7 +134,7 @@ const PamelaShorePage = () => {
           </div>
 
           <div className="pamela-services-cta">
-            <Link to="/booking" className="pamela-cta-button">
+            <Link to="/#contact" className="pamela-cta-button">
               Book a Session
             </Link>
           </div>
@@ -186,7 +186,7 @@ const PamelaShorePage = () => {
             <p className="pamela-cta-text">
               Book a session to explore how these modalities can support your unique path to transformation.
             </p>
-            <Link to="/booking" className="pamela-cta-button">
+            <Link to="/#contact" className="pamela-cta-button">
               Book a Session
             </Link>
           </div>

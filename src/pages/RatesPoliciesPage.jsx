@@ -65,7 +65,7 @@ const RatesPoliciesPage = () => {
             Sessions are scheduled by appointment.
           </p>
           <div className="rates-booking-cta">
-            <Link to="/booking" className="rates-primary-cta">
+            <Link to="/#contact" className="rates-primary-cta">
               Book a Session
             </Link>
           </div>

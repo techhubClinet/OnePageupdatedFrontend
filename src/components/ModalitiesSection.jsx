@@ -42,8 +42,7 @@ const ModalitiesSection = () => {
   ];
 
   const handleServiceClick = (service) => {
-    // Navigate to booking page
-    window.location.href = '/booking';
+    window.location.href = '/#contact';
   };
 
   return (

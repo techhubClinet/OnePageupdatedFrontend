@@ -3,7 +3,6 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import ServicesPage from './pages/ServicesPage';
-import ConnectPage from './pages/ConnectPage';
 import AdminLogin from './admin/AdminLogin';
 import AdminDashboard from './admin/AdminDashboard';
 
@@ -16,10 +15,10 @@ function App() {
         {/* Main Pages */}
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/connect" element={<ConnectPage />} />
         
-        {/* Backward compatibility - redirect booking to connect */}
-        <Route path="/booking" element={<Navigate to="/connect" replace />} />
+        {/* Redirect booking/connect to home contact form */}
+        <Route path="/booking" element={<Navigate to="/#contact" replace />} />
+        <Route path="/connect" element={<Navigate to="/#contact" replace />} />
         
         {/* Admin Routes */}
         <Route

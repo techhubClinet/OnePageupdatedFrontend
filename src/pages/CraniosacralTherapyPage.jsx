@@ -20,7 +20,7 @@ const CraniosacralTherapyPage = () => {
               neuro-somatic sessions.
             </p>
             <div className="modality-hero-actions">
-              <Link to="/booking" className="modality-primary-cta">
+              <Link to="/#contact" className="modality-primary-cta">
                 Book a Session
               </Link>
             </div>
@@ -53,7 +53,7 @@ const CraniosacralTherapyPage = () => {
             In-person only, incorporated as part of InnerDialogue and neuro-somatic integration work.
           </p>
           <div className="modality-bottom-cta">
-            <Link to="/booking" className="modality-primary-cta">
+            <Link to="/#contact" className="modality-primary-cta">
               Book a Session
             </Link>
           </div>

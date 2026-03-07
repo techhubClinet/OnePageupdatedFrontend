@@ -22,7 +22,7 @@ const IntegratedNeuroSomaticPage = () => {
               InnerDialogue-informed work, and movement through Gyrotonic® or Pilates.
             </p>
             <div className="integrated-hero-actions">
-              <Link to="/booking" className="integrated-primary-cta">
+              <Link to="/#contact" className="integrated-primary-cta">
                 Book a Session
               </Link>
             </div>
@@ -87,7 +87,7 @@ const IntegratedNeuroSomaticPage = () => {
             occur together.
           </p>
           <div className="integrated-format-cta">
-            <Link to="/booking" className="integrated-primary-cta">
+            <Link to="/#contact" className="integrated-primary-cta">
               Book a Session
             </Link>
           </div>
