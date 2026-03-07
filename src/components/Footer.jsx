@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaGlobe, FaInstagram, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { SiTiktok } from 'react-icons/si';
 import './Footer.css';
@@ -14,20 +14,6 @@ const socialLinks = [
 ];
 
 const Footer = () => {
-  const location = useLocation();
-
-  const handleScroll = (e, targetId) => {
-    e.preventDefault();
-    if (location.pathname !== '/') {
-      window.location.href = `/#${targetId}`;
-      return;
-    }
-    const el = document.getElementById(targetId);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <footer className="footer">
       <div className="container footer-inner">
